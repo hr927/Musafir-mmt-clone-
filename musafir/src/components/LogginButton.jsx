@@ -254,7 +254,7 @@ const LogginButton = ({ SignInWithGoogle }) => {
   const handleClose = () => setOpen(false);
   const [value, setValue] = React.useState("one");
 
-  const [content, setContent] = React.useState("Hello");
+  const [content, setContent] = React.useState("Hello !");
 
   const [flip, setflip] = React.useState(false);
 
