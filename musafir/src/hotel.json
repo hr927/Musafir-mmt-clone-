@@ -1,5 +1,4 @@
-{
-  "hotels":{   
+{ 
 "mumbai":[ 
     {    "id":1,
       "listingRowOuter href": "https://www.makemytrip.com/hotels/hotel-details?hotelId=200702031454576772&_uCurrency=INR&checkin=01192023&checkout=01202023&city=CTBOM&country=IN&lat=19.1371&lng=72.8466&locusId=CTBOM&locusType=city&rank=2&reference=hotel&roomStayQualifier=2e0e&searchText=Mumbai%2C%20Maharashtra%2C%20India&type=city&viewType=BUDGET&mtkeys=defaultMtkey",
@@ -5695,4 +5694,5 @@
        
 ]
 }
-}
+
+

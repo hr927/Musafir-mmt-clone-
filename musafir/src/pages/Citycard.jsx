@@ -2,9 +2,9 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-const Mumbai = ({ price, dscprice, offer, freecancellation, location2, name, image, imgThumb1, imgThumb2, imgThumb3, imgThumb4, rating, ratingText, location, item, cancellation, pernight, tax }) => {
+const Citycard = ({ price, dscprice, offer, freecancellation, location2, name, image, imgThumb1, imgThumb2, imgThumb3, imgThumb4, rating, ratingText, location, item, cancellation, pernight, tax }) => {
     return (<>
-        <Box style={{ width: "90%", margin: "auto", display: "flex", gap: "10px", padding: "10px", margin: "20px" }} >
+        <Box style={{ width: "90%", margin: "auto", display: "flex", gap: "10px", padding: "10px" }} >
 
             <Box style={{ width: "20%", margin: "auto" }}>
                 <Box>
@@ -20,7 +20,7 @@ const Mumbai = ({ price, dscprice, offer, freecancellation, location2, name, ima
             </Box>
 
 
-            <Box style={{ width: "70%", margin: "auto", gap: "10px", padding: "10px", margin: "20px", marginLeft: "50px" }}>
+            <Box style={{ width: "70%", margin: "auto", gap: "10px", padding: "10px",  marginLeft: "50px" }}>
                 <Box style={{ display: "flex", gap: "10px" }}>
                     <Typography variant="h6">{rating}</Typography>
                     <Typography variant="h6">{ratingText}</Typography>
@@ -62,4 +62,4 @@ const Mumbai = ({ price, dscprice, offer, freecancellation, location2, name, ima
     )
 }
 
-export default Mumbai
+export default Citycard
