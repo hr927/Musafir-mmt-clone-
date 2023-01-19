@@ -1,65 +1,65 @@
+
+import { Typography } from '@mui/material'
+import { Box } from '@mui/system'
 import React from 'react'
-
 const Mumbai = ({ price, dscprice, offer, freecancellation, location2, name, image, imgThumb1, imgThumb2, imgThumb3, imgThumb4, rating, ratingText, location, item, cancellation, pernight, tax }) => {
-  return (<>
-    <div style={{ width: "90%", margin: "auto", display: "flex", gap: "10px", padding: "10px", margin: "20px" }} >
+    return (<>
+        <Box style={{ width: "90%", margin: "auto", display: "flex", gap: "10px", padding: "10px", margin: "20px" }} >
 
-      <div style={{ width: "20%", margin: "auto" }}>
-        <div>
-          <img width={"320px"} height={"220px"} src={image} alt="" />
-        </div>
+            <Box style={{ width: "20%", margin: "auto" }}>
+                <Box>
+                    <img width={"320px"} height={"220px"} src={image} alt="" />
+                </Box>
 
-        <div style={{ display: "flex", gap: "10px" }}>
-          <img width={"100px"} src={imgThumb1} alt="" />
-          <img width={"100px"} src={imgThumb2} alt="" />
-          <img width={"100px"} src={imgThumb3} alt="" />
-        </div>
+                <Box style={{ display: "flex", gap: "10px" }}>
+                    <img width={"100px"} src={imgThumb1} alt="" />
+                    <img width={"100px"} src={imgThumb2} alt="" />
+                    <img width={"100px"} src={imgThumb3} alt="" />
+                </Box>
 
-      </div>
-
-
-      <div style={{ width: "70%", margin: "auto", gap: "10px", padding: "10px", margin: "20px", marginLeft: "50px" }}>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <h5>{rating}</h5>
-          <h5>{ratingText}</h5>
-
-        </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <h5>{name}</h5>
-
-        </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-          <h5>{location2}</h5>
-          <h5>{location}</h5>
-
-        </div>
-        <div style={{ display: "flex", gap: "10px" }}>
-
-          <h5>{item}</h5>
-
-        </div>
-
-        <div style={{ gap: "10px" }}>
-          <h5>{cancellation}</h5>
-          <h5>{freecancellation}</h5>
-          <h5>{offer}</h5>
-        </div>
+            </Box>
 
 
+            <Box style={{ width: "70%", margin: "auto", gap: "10px", padding: "10px", margin: "20px", marginLeft: "50px" }}>
+                <Box style={{ display: "flex", gap: "10px" }}>
+                    <Typography variant="h6">{rating}</Typography>
+                    <Typography variant="h6">{ratingText}</Typography>
 
-      </div>
-      <div style={{ gap: "10px" }}>
-        <h5>{price}</h5>
-        <h5>{dscprice}</h5>
-        <h5>{tax}</h5>
-        <h5>{pernight}</h5>
-      </div>
-    </div>
+                </Box>
+                <Box style={{ display: "flex", gap: "10px" }}>
+                    <Typography variant="h6">{name}</Typography>
 
-  </>
-  )
+                </Box>
+                <Box style={{ display: "flex", gap: "10px" }}>
+                    <Typography variant="h6">{location2}</Typography>
+                    <Typography variant="h6">{location}</Typography>
+
+                </Box>
+                <Box style={{ display: "flex", gap: "10px" }}>
+
+                    <Typography variant="h6">{item}</Typography>
+
+                </Box>
+
+                <Box style={{ gap: "10px" }}>
+                    <Typography variant="h6">{cancellation}</Typography>
+                    <Typography variant="h6">{freecancellation}</Typography>
+                    <Typography variant="h6">{offer}</Typography>
+                </Box>
+
+
+
+            </Box>
+            <Box >
+                <Typography variant="h6">{price}</Typography>
+                <Typography variant="h6">{dscprice}</Typography>
+                <Typography variant="h6">{tax}</Typography>
+                <Typography variant="h6">{pernight}</Typography>
+            </Box>
+        </Box>
+
+    </>
+    )
 }
 
 export default Mumbai
-
-

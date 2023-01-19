@@ -32,8 +32,7 @@ const Hotel = () => {
   const handleclick = () => {
 
   }
-  //  let    mdata= mumbai.map((e) => <Box key={e.id}> <h1 > {e.grayText}</h1> <h1 > {e.blueText}</h1> <img src={e.img} alt="" /> </Box>) 
-  // const mydata= mumbai.map((e) =>{  id=key={e.id} price={e.grayText} text={e.blueText} img={e.img} }  ) 
+  
 
   return (<>
 
@@ -60,9 +59,7 @@ const Hotel = () => {
       <Button onClick={handleclick}>Search</Button>
     </form>
 
-    {/* {value === "mumbai" ? mumbai.map((e) => <Box key={e.id}> <h1 > {e.grayText}</h1> <h1 > {e.blueText}</h1> <img src={e.img} alt="" /> </Box>) : ""}
-    {value === "pune" ? pune.map((e) => <Box key={e.id}> <h1 > {e.grayText}</h1> <h1 > {e.blueText}</h1> <img src={e.img} alt="" /> </Box>) : ""}
-    {value === "delhi" ? delhi.map((e) => <Box key={e.id}> <h1 > {e.grayText}</h1> <h1 > {e.blueText}</h1> <img src={e.img} alt="" /> </Box>) : ""} */}
+   
     {value === "mumbai" ? mumbai.map((e) => (
       <Mumbai
         key={e.id}
