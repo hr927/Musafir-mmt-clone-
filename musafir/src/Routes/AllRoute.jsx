@@ -2,12 +2,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
+import Destinations from "../pages/Destinations";
 
 import Flights from "../pages/flights/Flights";
 
 import Hotel from "../pages/Hotel";
 
 import Profile from "../pages/Profile";
+import Where from "../pages/Where";
 import PrivateRoute from "./PrivateRoute";
 
 const AllRoute = () => {
@@ -34,6 +36,8 @@ const AllRoute = () => {
         }
       ></Route>
       <Route path="/flight" element={<Flights />}></Route>
+      <Route path="/where" element={<Where />}></Route>
+      <Route path="/where/:id" element={<Destinations />}></Route>
     </Routes>
   );
 };
