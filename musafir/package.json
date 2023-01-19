@@ -7,6 +7,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.11.0",
+    "@mui/lab": "^5.0.0-alpha.116",
     "@mui/material": "^5.11.4",
     "@mui/x-date-pickers": "^5.0.14",
     "@testing-library/jest-dom": "^5.16.5",
@@ -17,13 +18,21 @@
     "dayjs": "^1.11.7",
     "dotenv": "^16.0.3",
     "firebase": "^9.15.0",
+    "path-browserify": "^1.0.1",
     "react": "^18.2.0",
+
+    "react-animated-text-content": "^1.0.1",
+
+    "react-datepicker": "^4.8.0",
+
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",
+    "react-slideshow-image": "^4.1.1",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
