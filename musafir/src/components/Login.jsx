@@ -5,12 +5,11 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import LogginButton from "./LogginButton";
 
-
 firebase.initializeApp({
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
   apiKey: "AIzaSyBprMmCLTqRrEhdekCtn5-gZCo942orqxQ",
-  authDomain:"musafir-431a8.firebaseapp.com",
+  authDomain: "musafir-431a8.firebaseapp.com",
   projectId: "musafir-431a8",
   storageBucket: "musafir-431a8.appspot.com",
   messagingSenderId: "633912145217",
