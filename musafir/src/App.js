@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
-import AllRoute from "./Routes/AllRoute";
 
-// import AllRoute from './Routes/AllRoute';
+import AllRoute from "./Routes/AllRoute";
 import Navbar from "./components/Navbar";
 
 function App() {

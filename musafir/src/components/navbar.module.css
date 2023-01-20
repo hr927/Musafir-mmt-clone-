@@ -31,7 +31,8 @@
 
 /* make my trip anchor tag img container */
 .logoimg img {
-    width: 70%;
+  
+    width: 100px;
 }
 
 /* .hamburgr_menu */

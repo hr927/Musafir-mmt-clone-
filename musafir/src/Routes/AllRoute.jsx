@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
 
 import Flights from "../pages/flights/Flights";
+import { Home } from "../pages/Home/Home";
 
 import Hotel from "../pages/Hotel";
 
@@ -13,6 +14,7 @@ import PrivateRoute from "./PrivateRoute";
 const AllRoute = () => {
   return (
     <Routes>
+       <Route path="/" element={<Home />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route
         path="/"

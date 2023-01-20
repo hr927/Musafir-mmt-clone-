@@ -6,15 +6,15 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { BrowserRouter } from "react-router-dom";
-
+import { ListenerProvider } from "./Contexts/ListenerProvider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-  
+  <ListenerProvider>
    <Provider store={store}>
     <App />
   </Provider>
-  
+  </ListenerProvider>
   </BrowserRouter>
  
 );
