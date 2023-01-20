@@ -6,6 +6,7 @@ import { ListenerContext } from "../../Contexts/ListenerProvider";
 import { SimpleSlider } from "../../components/SimpleSlider";
 import { Banner } from "../Banner";
 
+
 import Final1 from "../../components/Carousel1/Final";
 export const Home = () => {
   const { setWidth } = useContext(ListenerContext);

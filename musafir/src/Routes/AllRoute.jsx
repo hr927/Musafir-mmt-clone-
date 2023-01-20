@@ -8,6 +8,7 @@ import Flights from "../pages/flights/Flights";
 import { Home } from "../pages/Home/Home";
 
 import Hotel from "../pages/hotels/Hotel";
+import Payment from "../pages/Payment";
 
 import Profile from "../pages/Profile";
 import Where from "../pages/Where";
@@ -16,15 +17,23 @@ import PrivateRoute from "./PrivateRoute";
 const AllRoute = () => {
   return (
     <Routes>
-       <Route path="/" element={<Home />}></Route>
+       {/* <Route path="/" element={<Home />}></Route> */}
       <Route path="/login" element={<Login />}></Route>
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route
+        path="/profile"
+        element={
+          
+            <Profile></Profile>
+        
+        }
+      ></Route>
+        <Route
         path="/"
         element={
-          <PrivateRoute>
-            <Profile></Profile>
-          </PrivateRoute>
+          
+            <Payment></Payment>
+        
         }
       ></Route>
       <Route path="/flight" element={<Flights />}></Route>
