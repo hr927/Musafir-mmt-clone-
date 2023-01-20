@@ -345,5 +345,121 @@
         { "id": "", "image": "", "about": "", "subtitle": "" }
       ]
     }
+  ],
+  "giftcards": [
+    {
+      "id": "WeddingGiftCard",
+      "title": "Wedding Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/giftcard-12012023.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "LuxuryHotelsGiftCard",
+      "title": "Luxury Hotels Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/luxury-hotel-2.png",
+      "category": "loved"
+    },
+    {
+      "id": "BirthdayCard",
+      "title": "Birthday Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-birthday-1-phy-12012021.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "BestWishesGiftCard",
+      "title": "Best Wishes Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-BestWishes-2.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "AnniversaryGiftCard",
+      "title": "Anniversary Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-aniversary-1-phy-12012021.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "CongratulationsGiftCard",
+      "title": "Congratulations Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-congrats-1-phy-12012021.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "RakshabandhanGiftCard",
+      "title": "Rakshabandhan Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/gc-rakshabandhan.png",
+      "category": "festival"
+    },
+    {
+      "id": "FarewellGiftCard",
+      "title": "Farewell Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-farewell-1.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "ThankYouGiftCard",
+      "title": "Thank You Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-thank-you-1.png",
+      "category": "ocassion"
+    },
+    {
+      "id": "MothersDayGiftCard",
+      "title": "Mother's Day Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/mothers-day-1.png",
+      "category": "loved"
+    },
+    {
+      "id": "Father'sDayGiftCard",
+      "title": "Father's Day Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/father-day-1.png",
+      "category": "loved"
+    },
+    {
+      "id": "ValentinesDayGiftCard",
+      "title": "Valentines Day Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/father-day-1.png",
+      "category": "loved"
+    },
+    {
+      "id": "EidMubarakGiftCard",
+      "title": "Eid Mubarak Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/father-day-1.png",
+      "category": "festival"
+    },
+    {
+      "id": "OnamGiftCard",
+      "title": "Onam Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-Onam-1.png",
+      "category": "festival"
+    },
+    {
+      "id": "ChristmasGiftCard",
+      "title": "Christmas Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/christmas-1.png",
+      "category": "festival"
+    },
+    {
+      "id": "KarvachauthGiftCard",
+      "title": "Karvachauth Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/karva-chauth-1-22102021.png",
+      "category": "festival"
+    },
+    {
+      "id": "HappyNewYearGiftCard",
+      "title": "Happy New Year Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/new-year-1.png",
+      "category": "festival"
+    },
+    {
+      "id": "DiwaliGiftCard",
+      "title": "Diwali Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/580x346-diwali-1-phy-12012021.png",
+      "category": "festival"
+    },
+    {
+      "id": "BhaidoojhGiftCard",
+      "title": "Bhaidoojh Gift Card",
+      "image": "https://promos.makemytrip.com/appfest/2x/bhai-dooj-2-03112021.png",
+      "category": "festival"
+    }
   ]
 }
