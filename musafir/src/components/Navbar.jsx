@@ -13,6 +13,9 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "@mui/material";
+import Login from "./Login";
+import AccountMenu from "./AccountMenu";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -28,6 +31,10 @@ const Navbar = () => {
   const handleClickCharter = () => navigate("/charter");
   const handleClickActivities = () => navigate("/activitie");
   const handleClickLogin = () => navigate("/login");
+
+  //faisal
+  const isLoggedIn=useSelector((store)=>store.auth.isLoggedIn)
+  
 
   return (
     <>
@@ -133,10 +140,19 @@ const Navbar = () => {
                 </span>
                 <p >Activities</p>
               </div>
+
+              <div className={isLoggedIn?"":styles.login} style={isLoggedIn?{color:"black"}:{}}>
+              <div onClick={handleClickLogin}>
+             {isLoggedIn?<AccountMenu/>:<Login/>}
+          
+              
+              </div>
+
               <div className={styles.login}>
                 <div onClick={handleClickLogin}>
                   <Button variant="login">Login Or Create Account</Button>
                 </div>
+
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { LOGIN, LOGOUT } from "./auth.types"
 
 const initialstate={
     isLoggedIn:false,
-    user:{}
+    user:[]
 }
 // structure of  user:{providerData:[]}
 //structure of providerData:
