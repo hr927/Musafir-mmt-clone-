@@ -2,6 +2,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
+import GetBookData from "../pages/bookingPage/GetBookData";
 import Destinations from "../pages/Destinations";
 
 import Flights from "../pages/flights/Flights";
@@ -16,7 +17,7 @@ import PrivateRoute from "./PrivateRoute";
 const AllRoute = () => {
   return (
     <Routes>
-       <Route path="/" element={<Home />}></Route>
+      <Route path="/" element={<Home />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route
@@ -28,6 +29,7 @@ const AllRoute = () => {
         }
       ></Route>
       <Route path="/flight" element={<Flights />}></Route>
+      <Route path="/bookNow" element={<GetBookData />}></Route>
       <Route path="/where" element={<Where />}></Route>
       <Route path="/where/:id" element={<Destinations />}></Route>
     </Routes>
