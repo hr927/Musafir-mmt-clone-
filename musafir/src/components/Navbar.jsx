@@ -22,7 +22,7 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const handleClickFlight = () => navigate("/flights");
-  const handleClickHotels = () => navigate("/hotels");
+  const handleClickHotels = () => navigate("/hotel");
   const handleClickHomeWork = () => navigate("/homestay");
   const handleClickTrain = () => navigate("/train");
   const handleClickBus = () => navigate("/bus");
@@ -45,10 +45,7 @@ const Navbar = () => {
             {/* logo wrapper */}
             <div className={styles.logoWrapper}>
               <a href="/" className={styles.logoimg}>
-                <img
-                  src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
-                  alt="Logo"
-                />
+                <img src="./Images/logo.png" alt="Logo" />
               </a>
             </div>
             {/* hamberger menu */}
@@ -133,7 +130,7 @@ const Navbar = () => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></FlightTakeoffIcon>
                 </span>
-                <p style={{ marginTop: "0px" }}>Charter flights</p>
+                <p>Charter flights</p>
               </div>
               <div onClick={handleClickActivities}>
                 <span>
@@ -141,14 +138,21 @@ const Navbar = () => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></DownhillSkiingIcon>
                 </span>
-                <p style={{ marginTop: "0px" }}>Activities</p>
+                <p >Activities</p>
               </div>
+
               <div className={isLoggedIn?"":styles.login} style={isLoggedIn?{color:"black"}:{}}>
               <div onClick={handleClickLogin}>
              {isLoggedIn?<AccountMenu/>:<Login/>}
           
               
               </div>
+
+              <div className={styles.login}>
+                <div onClick={handleClickLogin}>
+                  <Button variant="login">Login Or Create Account</Button>
+                </div>
+
               </div>
             </div>
           </div>

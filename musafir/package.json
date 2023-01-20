@@ -24,6 +24,7 @@
     "react-animated-text-content": "^1.0.1",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.2",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.6.2",
     "react-scripts": "5.0.1",

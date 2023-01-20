@@ -1,0 +1,212 @@
+{
+  "pagination": {
+  "limit": 100,
+  "offset": 0,
+  "count": 100,
+  "total": 108
+  },
+  "data": [
+
+  {
+    "airline":"Vistara",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"MUMBAI",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"6999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"GoAir",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"MUMBAI",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"7999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"IndiGo",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"MUMBAI",
+    "departure":"02:20",
+    "arrival":"04:15",
+    "price":"5999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"SpiceJet",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"MUMBAI",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"4999",
+    "totalTime":"02h 55m"
+  },
+  {
+    "airline":"AirIndia",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"MUMBAI",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"8999",
+    "totalTime":"02h 55m"
+  },  {
+    "airline":"Vistara",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"BANGLURU",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"6999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"GoAir",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"BANGLURU",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"7999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"IndiGo",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"BANGLURU",
+    "departure":"02:20",
+    "arrival":"04:15",
+    "price":"5999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"SpiceJet",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"BANGLURU",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"4999",
+    "totalTime":"02h 55m"
+  },
+  {
+    "airline":"AirIndia",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"BANGLURU",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"8999",
+    "totalTime":"02h 55m"
+  },
+  {
+    "airline":"Vistara",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"PUNE",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"6999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"GoAir",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"PUNE",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"7999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"IndiGo",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"PUNE",
+    "departure":"02:20",
+    "arrival":"04:15",
+    "price":"5999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"SpiceJet",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"PUNE",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"4999",
+    "totalTime":"02h 55m"
+  },
+  {
+    "airline":"AirIndia",
+    "number":"6E 2054",
+    "from":"DELHI",
+    "to":"PUNE",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"8999",
+    "totalTime":"02h 55m"
+  },  {
+    "airline":"Vistara",
+    "number":"6E 2054",
+    "from":"MUMBAI",
+    "to":"BANGLURU",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"6999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"GoAir",
+    "number":"6E 2054",
+    "from":"MUMBAI",
+    "to":"BANGLURU",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"7999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"IndiGo",
+    "number":"6E 2054",
+    "from":"MUMBAI",
+    "to":"BANGLURU",
+    "departure":"02:20",
+    "arrival":"04:15",
+    "price":"5999",
+    "totalTime":"02h 55m"
+  },  
+  {
+    "airline":"SpiceJet",
+    "number":"6E 2054",
+    "from":"MUMBAI",
+    "to":"BANGLURU",
+    "departure":"06:20",
+    "arrival":"09:15",
+    "price":"4999",
+    "totalTime":"02h 55m"
+  },
+  {
+    "airline":"AirIndia",
+    "number":"6E 2054",
+    "from":"MUMBAI",
+    "to":"BANGLURU",
+    "departure":"04:20",
+    "arrival":"07:15",
+    "price":"8999",
+    "totalTime":"02h 55m"
+  }
+
+
+  ]
+  }
+  

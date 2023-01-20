@@ -1,3 +1,4 @@
+import FlightResult from "./FlightResult";
 import SearchBox from "./SearchBox";
 
 const Flights = () => {
@@ -6,6 +7,7 @@ const Flights = () => {
     <>
      
       <SearchBox/>
+      <FlightResult/>
 
     </>
   );
