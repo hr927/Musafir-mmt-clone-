@@ -1,24 +1,26 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+// import { makeStyles } from '@material-ui/core/styles';
 import {
   DatePicker,
   TimePicker,
   DateTimePicker,
   MuiPickersUtilsProvider,
-} from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
+} from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 
-const useStyles = makeStyles({
-  root: {
-    '& .MuiTextField-root': {
-      margin: '10px 0',
-    },
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: '10px 0',
+//     },
+//   },
+// });
 
 export default function MaterialUIPickers() {
-  const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  // const classes = useStyles();
+  const [selectedDate, setSelectedDate] = React.useState(
+    new Date("2014-08-18T21:11:54")
+  );
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -26,7 +28,7 @@ export default function MaterialUIPickers() {
 
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <div className={classes.root}>
+      <div>
         <DatePicker
           disableToolbar
           variant="inline"
@@ -37,7 +39,7 @@ export default function MaterialUIPickers() {
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
-            'aria-label': 'change date',
+            "aria-label": "change date",
           }}
         />
         <TimePicker
@@ -47,7 +49,7 @@ export default function MaterialUIPickers() {
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
-            'aria-label': 'change time',
+            "aria-label": "change time",
           }}
         />
         <DateTimePicker
@@ -57,7 +59,7 @@ export default function MaterialUIPickers() {
           value={selectedDate}
           onChange={handleDateChange}
           KeyboardButtonProps={{
-            'aria-label': 'change date',
+            "aria-label": "change date",
           }}
         />
       </div>

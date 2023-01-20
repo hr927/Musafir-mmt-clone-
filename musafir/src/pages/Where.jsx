@@ -40,12 +40,12 @@ const Where = () => {
         }}
       >
         <h1>Where2Go by Musafir - Discover Places & Plan Your Holidays!</h1>
-        <h3>
+        <h4>
           Planning your next vacation? Try one of these exotic and comfortable
           travel ideas to make your holiday memorable. Whether a romantic beach
           vacation, a relaxing family holiday, an adventurous trek or a heritage
           walk, plan the most appropriate itinerary within your budget.
-        </h3>
+        </h4>
       </div>
       <div
         style={{
@@ -99,7 +99,7 @@ const Where = () => {
                   alt=""
                 />
                 <h2>{el.id}</h2>
-                <p>{el.about}</p>
+                <p style={{ color: "white" }}>{el.about}</p>
               </div>
             </Grid>
           ))}
@@ -119,57 +119,57 @@ const Where = () => {
           <h1>
             Choose from our list of holiday ideas and appease your wanderlust!
           </h1>
-          <p>
+          <h4>
             Vacations are meant to make memories! And a well-planned itinerary
             makes for the vacation of a lifetime. Choose from a variety of
             destinations including picturesque mountains, vibrant valleys,
             majestic monuments, gorgeous cities and adventurous trails.
-          </p>
-          <p>
+          </h4>
+          <h4>
             Holidays to these exclusive destinations are available at a
             preferred budget, ranging from Rs. 10,000 to 50,000, including both
             pocket-friendly as well as uber-luxurious options. Not only will
             these holidays fit your budget, they will also cater to all your
             travel needs.
-          </p>
-          <p>
+          </h4>
+          <h4>
             Eager for a mountain holiday? Our scenic mountain destinations offer
             mesmerising views of snowclad mountains and offer trips to unique
             tourist points.
-          </p>
-          <p>
+          </h4>
+          <h4>
             Want to go on a trek? Try the ones here with beautiful views of
             lofty mountains and winding paths that take you through rugged
             valleys and forests. The delicious local cuisine and extraordinary
             accommodation inside the woods is, of course, the cherry on the
             cake.
-          </p>
-          <p>
+          </h4>
+          <h4>
             Choose an adventure heavy trip, best suited for those craving an
             adrenaline rush, and try your hand at offbeat activities like
             camping, scuba diving, rafting, kayaking, parasailing, sky diving,
             bungee jumping and more.
-          </p>
-          <p>
+          </h4>
+          <h4>
             Planning your honeymoon or want to on a romantic break? We have
             curated wonderful vacation experiences where you and your partner
             can celebrate your love!
-          </p>
-          <p>
+          </h4>
+          <h4>
             Beach destinations offer excellent accommodations with outstanding
             views, mouth-watering cuisines, thrilling water activities and of
             course, a lazy beach bed to chill in.
-          </p>
-          <p>
+          </h4>
+          <h4>
             If you are a heritage enthusiast or have a spiritual bent of mind,
             then you will love the unique heritage and pilgrimage destinations
             on our list. Food connoisseurs can take a literal trip down renowned
             food lanes and binge on exotic cuisines.
-          </p>
-          <p>
+          </h4>
+          <h4>
             So, what are you waiting for? Explore these fantastic holiday ideas
             and plan your next voyage.
-          </p>
+          </h4>
         </div>
       </div>
       <div style={{ backgroundColor: "#121212", padding: "20px" }}>
@@ -196,12 +196,12 @@ const Where = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography>
+              <Typography sx={{ color: "white" }}>
                 What kind of destinations can I choose for travelling?
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
+              <Typography sx={{ color: "white" }}>
                 You can choose any destination for travel as per your mood. For
                 an action-packed holiday, you can choose wildlife, trekking and
                 other adventurous destinations. For a romantic holiday with your
@@ -224,10 +224,12 @@ const Where = () => {
               aria-controls="panel2a-content"
               id="panel2a-header"
             >
-              <Typography>Can I opt for a budget-friendly holiday?</Typography>
+              <Typography sx={{ color: "white" }}>
+                Can I opt for a budget-friendly holiday?
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
+              <Typography sx={{ color: "white" }}>
                 Yes, you can. All you have to do is set an approximate
                 expenditure amount in your mind before starting exploring the
                 ideas here. You can search for a suitable destination for your
@@ -249,12 +251,12 @@ const Where = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography>
+              <Typography sx={{ color: "white" }}>
                 Which time of the year is best suited for booking a holiday?
               </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
+              <Typography sx={{ color: "white" }}>
                 Holidays can be booked throughout the year. You only need to
                 select the month in which you are planning to travel. Our
                 curated list of ideas is designed in such a way that you will be
@@ -277,10 +279,12 @@ const Where = () => {
               aria-controls="panel2a-content"
               id="panel2a-header"
             >
-              <Typography>What all will I get in a holiday idea?</Typography>
+              <Typography sx={{ color: "white" }}>
+                What all will I get in a holiday idea?
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>
+              <Typography sx={{ color: "white" }}>
                 Once you choose a destination, it will give you complete details
                 of all the unique things about that place that must not be
                 missed, including most visited local sites, best places to stay

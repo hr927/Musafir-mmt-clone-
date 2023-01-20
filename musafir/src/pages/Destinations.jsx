@@ -45,7 +45,7 @@ const Destinations = () => {
         }}
       >
         <h1>{heading}</h1>
-        <h3>{subhead}</h3>
+        <h3 style={{ color: "white" }}>{subhead}</h3>
       </div>
       <div
         style={{
@@ -98,8 +98,8 @@ const Destinations = () => {
                   alt=""
                 />
                 <h2>{el.id}</h2>
-                <p>{el.subtitle}</p>
-                <p>{el.about}</p>
+                <p style={{ color: "white" }}>{el.subtitle}</p>
+                <p style={{ color: "white" }}>{el.about}</p>
               </div>
             </Grid>
           ))}

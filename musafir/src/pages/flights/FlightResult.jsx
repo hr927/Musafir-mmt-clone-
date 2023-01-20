@@ -22,10 +22,10 @@ function FlightResult() {
 
   console.log("data", data);
   const handleSort = (e) => {
-    sorting(e.target.checked);
+    // sorting(e.target.checked);
   };
   const handleHigh = (e) => {
-    sorthigh(e.target.checked);
+    // sorthigh(e.target.checked);
   };
 
   //   const handleSort = async (e) => {

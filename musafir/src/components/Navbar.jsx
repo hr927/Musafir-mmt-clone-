@@ -33,8 +33,7 @@ const Navbar = () => {
   const handleClickLogin = () => navigate("/login");
 
   //faisal
-  const isLoggedIn=useSelector((store)=>store.auth.isLoggedIn)
-  
+  const isLoggedIn = useSelector((store) => store.auth.isLoggedIn);
 
   return (
     <>
@@ -138,21 +137,22 @@ const Navbar = () => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></DownhillSkiingIcon>
                 </span>
-                <p >Activities</p>
+                <p>Activities</p>
               </div>
 
-              <div className={isLoggedIn?"":styles.login} style={isLoggedIn?{color:"black"}:{}}>
-              <div onClick={handleClickLogin}>
-             {isLoggedIn?<AccountMenu/>:<Login/>}
-          
-              
-              </div>
-
-              <div className={styles.login}>
+              <div
+                className={isLoggedIn ? "" : styles.login}
+                style={isLoggedIn ? { color: "black" } : {}}
+              >
                 <div onClick={handleClickLogin}>
-                  <Button variant="login">Login Or Create Account</Button>
+                  {isLoggedIn ? <AccountMenu /> : <Login />}
                 </div>
 
+                {/* <div className={styles.login}>
+                  <div onClick={handleClickLogin}>
+                    <Button variant="login">Login Or Create Account</Button>
+                  </div>
+                </div> */}
               </div>
             </div>
           </div>
