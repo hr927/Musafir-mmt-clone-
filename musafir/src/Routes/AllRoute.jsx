@@ -14,16 +14,6 @@ const AllRoute = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />}></Route>
-      <Route
-        path="/"
-        element={
-          <PrivateRoute>
-            <Profile></Profile>
-          </PrivateRoute>
-        }
-      ></Route>
-
-      <Route path="/login" element={<Login />}></Route>
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route
         path="/"
