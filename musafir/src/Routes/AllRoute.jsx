@@ -6,7 +6,7 @@ import Login from "../components/Login";
 import Flights from "../pages/flights/Flights";
 import { Home } from "../pages/Home/Home";
 
-import Hotel from "../pages/Hotel";
+import Hotel from "../pages/hotels/Hotel";
 
 import Profile from "../pages/Profile";
 import PrivateRoute from "./PrivateRoute";
