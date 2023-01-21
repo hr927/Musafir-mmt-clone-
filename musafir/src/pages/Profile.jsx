@@ -15,28 +15,28 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
 import InfoIcon from "@mui/icons-material/Info";
 import LinearProgress from "@mui/joy/LinearProgress";
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import { styled } from "@mui/material/styles";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import { useNavigate } from "react-router-dom";
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
-
- function BasicModal() {
+function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -74,11 +74,11 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
+  "&:nth-of-type(odd)": {
     backgroundColor: theme.palette.action.hover,
   },
   // hide last border
-  '&:last-child td, &:last-child th': {
+  "&:last-child td, &:last-child th": {
     border: 0,
   },
 }));
@@ -87,32 +87,31 @@ function createData(name, detail, fat, carbs, protein) {
   return { name, detail, fat, carbs, protein };
 }
 
-
-
- function CustomizedTables() {
-  const userData = useSelector((store) => store.auth.user[0])
+function CustomizedTables() {
+  const userData = useSelector((store) => store.auth.user[0]);
   const displayName = userData?.displayName;
-  const [Birthday,setBirthday]=useState("Add+")
-  const [Gender,setGender]=useState("Add+")
-  const [Marital,setMarital]=useState("Add+")
+  const [Birthday, setBirthday] = useState("Add+");
+  const [Gender, setGender] = useState("Add+");
+  const [Marital, setMarital] = useState("Add+");
 
   const rows = [
-    createData('Name', displayName),
-    createData('Birthday', Birthday),
-    createData('Gender', Gender,),
-    createData('Marital Status', Marital),
-  ]
+    createData("Name", displayName),
+    createData("Birthday", Birthday),
+    createData("Gender", Gender),
+    createData("Marital Status", Marital),
+  ];
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-       
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.detail==="Add+"?<Button>Add+</Button>:row.detail}</StyledTableCell>
+              <StyledTableCell align="right">
+                {row.detail === "Add+" ? <Button>Add+</Button> : row.detail}
+              </StyledTableCell>
               <StyledTableCell align="right">{row.fat}</StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">{row.protein}</StyledTableCell>
@@ -124,30 +123,30 @@ function createData(name, detail, fat, carbs, protein) {
   );
 }
 function CustomizedTables2() {
-  const userData = useSelector((store) => store.auth.user[0])
-  const Email=userData?.email
-  const [Mobile,setMobile]=useState("Add+")
-  const [Password,setPassword]=useState("******")
-  
-  const [Marital,setMarital]=useState("Add+")
+  const userData = useSelector((store) => store.auth.user[0]);
+  const Email = userData?.email;
+  const [Mobile, setMobile] = useState("Add+");
+  const [Password, setPassword] = useState("******");
+
+  const [Marital, setMarital] = useState("Add+");
 
   const rows = [
-    
-    createData('Mobile  Number', Mobile),
-    createData('EMAIL ID', Email,),
-    createData('PASSWORD', Password),
-  ]
+    createData("Mobile  Number", Mobile),
+    createData("EMAIL ID", Email),
+    createData("PASSWORD", Password),
+  ];
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
-       
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
               <StyledTableCell component="th" scope="row">
                 {row.name}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.detail==="Add+"?<Button>Add+</Button>:row.detail}</StyledTableCell>
+              <StyledTableCell align="right">
+                {row.detail === "Add+" ? <Button>Add+</Button> : row.detail}
+              </StyledTableCell>
               <StyledTableCell align="right">{row.fat}</StyledTableCell>
               <StyledTableCell align="right">{row.carbs}</StyledTableCell>
               <StyledTableCell align="right">{row.protein}</StyledTableCell>
@@ -159,10 +158,9 @@ function CustomizedTables2() {
   );
 }
 
-
 const bs =
   "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px";
-function TabsVertical({scrollToRef,logOut}) {
+function TabsVertical({ scrollToRef, logOut }) {
   const [value, setValue] = React.useState(0);
   return (
     <Tabs
@@ -174,8 +172,8 @@ function TabsVertical({scrollToRef,logOut}) {
       <TabList sx={{ border: "1px solid black", margin: "auto", mt: "30px" }}>
         <Tab
           onClick={() => {
-            setValue(0)
-            scrollToRef('myRef1')
+            setValue(0);
+            scrollToRef("myRef1");
           }}
           sx={
             value === 0
@@ -193,8 +191,8 @@ function TabsVertical({scrollToRef,logOut}) {
         </Tab>
         <Tab
           onClick={() => {
-            setValue(1)
-            scrollToRef('myRef2')
+            setValue(1);
+            scrollToRef("myRef2");
           }}
           sx={
             value === 1
@@ -212,8 +210,8 @@ function TabsVertical({scrollToRef,logOut}) {
         </Tab>
         <Tab
           onClick={() => {
-            setValue(2)
-            logOut()
+            setValue(2);
+            logOut();
           }}
           sx={
             value === 2
@@ -245,12 +243,13 @@ function TabsVertical({scrollToRef,logOut}) {
 
 const Profile = () => {
   const dispatch = useDispatch();
-  console.log("hello");
+  const navigate = useNavigate();
   const logOut = () => {
     auth
       .signOut()
       .then(() => {
         dispatch(logoutAction());
+        navigate("/");
         console.log("logged out");
       })
       .catch((error) => {
@@ -259,7 +258,6 @@ const Profile = () => {
   };
   const userData = useSelector((store) => store.auth.user[0]);
 
- 
   const profilePic = userData?.photoURL;
   const displayName = userData.displayName;
   const userEmail = userData.email;
@@ -268,11 +266,11 @@ const Profile = () => {
 
   function scrollToRef(ref) {
     switch (ref) {
-      case 'myRef1':
-        myRef1.current.scrollIntoView({ behavior: 'smooth' });
+      case "myRef1":
+        myRef1.current.scrollIntoView({ behavior: "smooth" });
         break;
-      case 'myRef2':
-        myRef2.current.scrollIntoView({ behavior: 'smooth' });
+      case "myRef2":
+        myRef2.current.scrollIntoView({ behavior: "smooth" });
         break;
       default:
         break;
@@ -281,14 +279,19 @@ const Profile = () => {
 
   return (
     <Box
-      sx={{ width: "80%", margin: "auto",marginTop:"20px" }}
+      sx={{ width: "80%", margin: "auto", marginTop: "20px" }}
       display="grid"
       direction="row"
       gridTemplateColumns="30% 70%"
       gap={2}
     >
       <Card
-        sx={{ minWidth: 275, maxHeight: "400px", border: "1px solid black",padding:"20px" }}
+        sx={{
+          minWidth: 275,
+          maxHeight: "400px",
+          border: "1px solid black",
+          padding: "20px",
+        }}
       >
         <Avatar
           sx={{
@@ -308,17 +311,19 @@ const Profile = () => {
             fontWeight: "bold",
             display: "block",
             width: "100%",
-            textAlign:"center",
+            textAlign: "center",
             margin: "auto",
-            marginTop:"10px"
+            marginTop: "10px",
           }}
         >
-         {displayName}
+          {displayName}
         </Typography>
         <TabsVertical logOut={logOut} scrollToRef={scrollToRef} />
       </Card>
       <Box display={"grid"} gap="20px" sx={{ overflowY: "scroll" }}>
-        <Card sx={{ minWidth: 275, border: "1px solid black",padding:"20px" }}>
+        <Card
+          sx={{ minWidth: 275, border: "1px solid black", padding: "20px" }}
+        >
           <CardContent>
             <Box>
               <Box sx={{ display: "flex", gap: "20px", fontWeight: "bold" }}>
@@ -336,40 +341,42 @@ const Profile = () => {
             <Box></Box>
           </CardContent>
         </Card>
-        <Card sx={{ minWidth: 275, border: "1px solid black",padding:"20px" }}>
-         <Box sx={{ display: "flex",  justifyContent:"space-between" }}>
-         <Box ref={myRef1} >
-            <Typography fontWeight={"bold"} fontSize={"30px"}>
-              Profile
-            </Typography>
-            <Typography fontSize={"20px"}>
-              Basic info, for a faster booking experience
-            </Typography>
+        <Card
+          sx={{ minWidth: 275, border: "1px solid black", padding: "20px" }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box ref={myRef1}>
+              <Typography fontWeight={"bold"} fontSize={"30px"}>
+                Profile
+              </Typography>
+              <Typography fontSize={"20px"}>
+                Basic info, for a faster booking experience
+              </Typography>
+            </Box>
+            <Button>Edit</Button>
           </Box>
-          <Button>Edit</Button>
-         </Box>
-         <Box>
-          <CustomizedTables />
-         </Box>
-        </Card>
-        <Card sx={{ minWidth: 275, border: "1px solid black",padding:"20px" }}>
-          
-        <Box sx={{ display: "flex",  justifyContent:"space-between" }}>
-         <Box ref={myRef2} >
-            <Typography fontWeight={"bold"} fontSize={"30px"}>
-              Login Details
-            </Typography>
-            <Typography fontSize={"20px"}>
-            Manage your email address mobile number and password
-            </Typography>
+          <Box>
+            <CustomizedTables />
           </Box>
-          <Button>Edit</Button>
-         </Box>
-         <Box>
-          <CustomizedTables2/>
-         </Box>
         </Card>
-      
+        <Card
+          sx={{ minWidth: 275, border: "1px solid black", padding: "20px" }}
+        >
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Box ref={myRef2}>
+              <Typography fontWeight={"bold"} fontSize={"30px"}>
+                Login Details
+              </Typography>
+              <Typography fontSize={"20px"}>
+                Manage your email address mobile number and password
+              </Typography>
+            </Box>
+            <Button>Edit</Button>
+          </Box>
+          <Box>
+            <CustomizedTables2 />
+          </Box>
+        </Card>
       </Box>
     </Box>
   );
