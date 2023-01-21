@@ -34,6 +34,7 @@ const Bookingheadercss = styled.div`
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
     background-color: black;
     z-index: 100;
   }
@@ -45,7 +46,7 @@ const Bookingheadercss = styled.div`
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 50px;
+    padding-top: 30px;
 
     h2 {
       color: white;
@@ -56,6 +57,7 @@ const Bookingheadercss = styled.div`
     display: flex;
     flex-direction: row;
     gap: 15px;
+    margin-top: 10px;
 
     p {
       color: white;

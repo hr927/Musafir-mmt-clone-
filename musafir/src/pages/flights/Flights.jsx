@@ -1,14 +1,11 @@
-import FlightResult from "./FlightResult";
+// import FlightResult from "./FlightResult";
 import SearchBox from "./SearchBox";
 
 const Flights = () => {
-
   return (
     <>
-     
-      <SearchBox/>
-      <FlightResult/>
-
+      <SearchBox />
+      {/* <FlightResult/> */}
     </>
   );
 };

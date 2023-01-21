@@ -58,7 +58,7 @@ const FlightDetails = () => {
                 <h4>{res.departure}</h4>
                 <p></p>
                 <h4>{res.from}</h4>
-                <p className="over">Indra Gandhi</p>
+                <p className="over">I</p>
               </div>
               <div className="timeer">
                 <p> {res.totalTime}</p>
