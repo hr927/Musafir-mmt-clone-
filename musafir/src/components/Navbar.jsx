@@ -30,7 +30,7 @@ const Navbar = () => {
   const handleClickVisa = () => navigate("/visa");
   const handleClickCharter = () => navigate("/charter");
   const handleClickActivities = () => navigate("/activitie");
-  const handleClickLogin = () => navigate("/login");
+
 
   //faisal
   const isLoggedIn = useSelector((store) => store.auth.isLoggedIn);
@@ -144,7 +144,7 @@ const Navbar = () => {
                 className={isLoggedIn ? "" : styles.login}
                 style={isLoggedIn ? { color: "black" } : {}}
               >
-                <div onClick={handleClickLogin}>
+                <div >
                   {isLoggedIn ? <AccountMenu /> : <Login />}
                 </div>
 

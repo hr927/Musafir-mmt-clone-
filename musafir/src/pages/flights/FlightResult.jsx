@@ -2,11 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./FlightResult.module.css";
+import { Link } from "react-router-dom";
 
 function FlightResult() {
   const [data, setData] = useState([]);
   const [value, setValue] = useState([]);
-  const [sortValue, setSortValue] = useState([]);
+  const [newData, setNewData] = useState([]);
+
   const sortLH = ["price"];
 
   useEffect(() => {
@@ -21,32 +23,46 @@ function FlightResult() {
   };
 
   console.log("data", data);
-  const handleSort = (e) => {
-    // sorting(e.target.checked);
-  };
+
   const handleHigh = (e) => {
     // sorthigh(e.target.checked);
   };
 
-  //   const handleSort = async (e) => {
-  //     let value = e.target.value;
-  //     setSortValue(value);
-  //     return await axios
-  //       .get(`http://localhost:8080/data?_sort=${value}&_order=asc`)
-  //       .then((response) => setData(response.data))
-  //       .catch((err) => console.log(err));
-  //   };
+  const handleSort = async (e) => {
+    return await axios
+      .get(`http://localhost:8080/data?q=${value}&_sort=price&_order=asc`)
+      .then((response) => setNewData(response.data))
+      .catch((err) => console.log(err));
+  };
 
-  //   const handleSearch = async (e) => {
-  //     e.preventDefault();
-  //     return await axios
-  //       .get(`http://localhost:8080/data?q=${value}`)
-  //       .then((response) => setData(response.data))
-  //       .catch((err) => console.log(err));
-  //   };
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    return await axios
+      .get(`http://localhost:8080/data?q=${value}`)
+      .then((response) => handleNewSearch(response.data))
+      .catch((err) => console.log(err));
+  };
+
+  const handleNewSearch = (a) => {
+    let c = a.filter((e) => {
+      return e.from == value;
+    });
+
+    setNewData(c);
+    console.log("c", c);
+  };
+  // console.log(newData);
+  //   const bookData = async (e) => {
+  //   e.preventDefault();
+  //   return await axios
+  //     .get(`http://localhost:8080/bookData?q=${value}`)
+  //     .then((response) => setData(response.data))
+  //     .catch((err) => console.log(err));
+  // };
+
   return (
     <div className={styles.container}>
-      {/* <form className="form" onSubmit={handleSearch}>
+      <form className="form" onSubmit={handleSearch}>
         <input
           type="text"
           className="form-control"
@@ -54,8 +70,9 @@ function FlightResult() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
+
         <button type="submit">Search</button>
-      </form> */}
+      </form>
 
       <div className={styles.left}>
         <div className={styles.filters}>
@@ -120,16 +137,33 @@ function FlightResult() {
             </div>
           </div>
           <div className={styles.firstFilter}>
-            <h3>Select Range ₹{value}</h3>
+            <h3>Select Range ₹</h3>
             <input type="range" min="1000" max="10000" />
           </div>
         </div>
       </div>
       <div className={styles.right}>
-        {data.map((e, index) => (
+        {newData.map((e, index) => (
           <div key={index} className={styles.flightCard}>
             <div className={styles.flightName}>
-              <div>logo</div>
+              <div className={styles.logo}>
+                <img
+                  src={
+                    e.airline === "IndiGo"
+                      ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=7"
+                      : e.airline === "AirIndia"
+                      ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=7"
+                      : e.airline === "Vistara"
+                      ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/UK.png?v=7"
+                      : e.airline === "SpiceJet"
+                      ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=7"
+                      : e.airline === "GoAir"
+                      ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7"
+                      : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7"
+                  }
+                  alt=""
+                />
+              </div>
               <div>
                 <div>{e.airline}</div>
                 <div>{e.number}</div>
@@ -151,7 +185,14 @@ function FlightResult() {
               <div>{e.to}</div>
             </div>
             <div className={styles.price}>{e.price}</div>
-            <button class={styles.bookNow}>BOOK NOW</button>
+            <button
+              class={styles.bookNow}
+              onClick={() => {
+                localStorage.setItem("bookData", JSON.stringify(e));
+              }}
+            >
+              <Link to="/bookNow">BOOK NOW</Link>
+            </button>
           </div>
         ))}
       </div>

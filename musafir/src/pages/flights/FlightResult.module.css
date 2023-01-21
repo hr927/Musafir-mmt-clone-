@@ -29,9 +29,10 @@
 
 }
 .flightName{
-  
+  display: flex;
   height: 70px;
   margin-top: 15px;
+ 
 
 }
 .totalTime{
@@ -94,5 +95,15 @@
         font-weight: 500;
         margin-left: 10px;
         align-items: center;
+      }
+
+
+      .logo img{
+        width:100%;
+
+      }
+      .logo{
+   
+        width:20%;
       }
   

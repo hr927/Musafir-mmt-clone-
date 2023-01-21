@@ -15,6 +15,7 @@ import {
 import { Container } from "@mui/system";
 import { useSelector } from "react-redux";
 import { loginAction } from "../redux/AuthReducer/auth.actions";
+import { useNavigate } from "react-router-dom";
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -31,7 +32,7 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+ const navigate=useNavigate()
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -97,8 +98,8 @@ export default function AccountMenu() {
         </Typography>
         <MenuItem>
           <Avatar src={profilePic} />
-          <Container sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography sx={{ marginLeft: "-10px" }}>My Profile</Typography>
+          <Container onClick={()=>navigate("/profile")} sx={{ display: "flex", flexDirection: "column" }}>
+            <Typography  sx={{ marginLeft: "-10px" }}>My Profile</Typography>
 
             <Typography
               varient="p"

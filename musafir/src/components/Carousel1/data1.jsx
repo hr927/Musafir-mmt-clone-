@@ -22,80 +22,80 @@ export const responsive = {
   export const productData = [
     {
       id: 1,
-      imageurl: "https://images.urbndata.com/is/image/Anthropologie/D48088652_901_b20?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "Tiled Margot Monogram Mug",
+      imageurl: "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_romantic44_p_540_417.jpg",
+      name: "Romantic Destination",
       price: "₹417",
       description: "Precision Perfect Matte Slimstick",
     },
     {
       id: 2,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/52733375_011_b14?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "Capri Blue Capiz Jar Candle",
+        "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_honeymoon11_p_540_417.jpg",
+      name: "Honeymoon Destinations",
       price: "₹580",
       description: "Hydrating Long-wear Lipstick",
     },
     {
       id: 3,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/76038256_010_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "Free People Movement Way Home Shine Shorts",
+        "https://hblimg.mmtcdn.com/content/hubble/img/TI/mmt/activities/m_curated_collection_international_destination_july_p_403_403.jpg",
+      name: "International Destination",
       price: "₹99.99",
       description: "Long-Wear Smudge-Proof Kajal",
     },
     {
       id: 4,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4114086690038_004_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "Maeve Bow Sweater",
+      "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_beach44_p_540_417.jpg",
+      name: "Beach Destination",
       price: "₹164.99",
       description: "Rosehip Oil-infused Daily Moisturising Cream",
     },
     {
       id: 5,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4114326950079_066_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "Maeve Plush V-Neck Sweater",
+        "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_weekend44_p_540_417.jpg",
+      name: "Weekend Getaways",
       price: "₹378.99",
       description: "Highly Concentrated Loose Shimmer Pigment",
     },
     {
       id: 6,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4123650590174_030_b10?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "The Colette Ponte Pants",
+        "https://hblimg.mmtcdn.com/content/hubble/img/collections/m_hill_stations11_p_540_417.jpg",
+      name: "Hill Stations",
       price: "₹1435",
       description: "5-in-1 Festive Beauty Kit",
     },
     {
       id: 7,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4123650590131_060_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "The Colette Cropped Wide-Leg Pants",
+        "https://hblimg.mmtcdn.com/content/hubble/img/Australia/mmt/destination/m_Australia_destination_6_l_361_641.jpg",
+      name: "Adventure Destinations",
       price: "₹239",
       description: "Liquid Matte Sindoor",
     },
     {
       id: 8,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4123650590185_030_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "The Naomi Wide-Leg Flare Pants",
+        "https://hblimg.mmtcdn.com//content/hubble/img/amritsar/mmt/destination/m_Amritsar_activity_heritage_l_684_1026.jpg",
+      name: "Heritage Destinations",
       price: "₹400.99",
       description: "5-in-1 Festive Beauty Kit",
     },
     {
       id: 9,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4123650590168_042_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "The Colette Wide-Leg Ponte Pants",
+        "https://hblimg.mmtcdn.com//content/hubble/img/alleppey/mmt/destination/m_destination-alleppey-landscape_l_400_640.jpg",
+      name: "Relaxtions Destination",
       price: "₹400.99",
       description: "5-in-1 Festive Beauty Kit",
     },
     {
       id: 10,
       imageurl:
-        "https://images.urbndata.com/is/image/Anthropologie/4123650590131_070_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640",
-      name: "The Colette Cropped Wide-Leg Pants",
+        "https://hblimg.mmtcdn.com//content/hubble/img/alleppey/mmt/destination/m_destination-alleppey-landscape_l_400_640.jpg",
+      name: "Relaxtions Destination",
       price: "₹400.99",
       description: "5-in-1 Festive Beauty Kit",
     },
