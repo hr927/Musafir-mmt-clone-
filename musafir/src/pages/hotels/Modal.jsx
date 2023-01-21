@@ -70,7 +70,7 @@ const style = {
   p: 4,
 };
 
-export default function Header() {
+export default function Header({Filter}) {
 
   
   const [open, setOpen] = React.useState(false);
@@ -120,10 +120,10 @@ export default function Header() {
               label="Price per Night"
               onChange={handleRoomPrice}>
 
-              <MenuItem value={"0-1500"}>0-1500</MenuItem>
-              <MenuItem value={"1500-2500"}>1500-2500</MenuItem>
-              <MenuItem value={"2500-5000"}>2500-5000</MenuItem>
-              <MenuItem value={"5000+"}>5000+</MenuItem>
+              <MenuItem onClick={()=>Filter(0,1500)} value={"0-1500"}>0-1500</MenuItem>
+              <MenuItem onClick={()=>Filter(1500,2500)} value={"1500-2500"}>1500-2500</MenuItem>
+              <MenuItem onClick={()=>Filter(2500,5000)} value={"2500-5000"}>2500-5000</MenuItem>
+              <MenuItem onClick={()=>Filter(5000,100000)} value={"5000+"}>5000+</MenuItem>
             </Select>
 
           </FormControl>

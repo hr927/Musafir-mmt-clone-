@@ -36,11 +36,13 @@ export function signup(email, password) {
     return async (dispatch, getState) => {
       try {
         await firebase.auth().createUserWithEmailAndPassword(email, password);
-        console.log("success")
+       
         // Dispatch a success action
         Post({email})
+        alert("Sign Up Successfull")
       } catch (error) {
         // Dispatch an error action
+     
       }
     };
   }
@@ -55,7 +57,7 @@ export function signup(email, password) {
         })
       } catch (error) {
         // Dispatch an error action
-        console.log("incorrect Credentials")
+        alert("Incorrect Credentials")
       }
     };
   }
