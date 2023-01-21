@@ -2,10 +2,14 @@
 import { Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-const Citycard = ({ image, imgThumb1, imgThumb2, imgThumb3, rating, ratingText, ratingcount, name, location2, location, item, cancellation, freecancellation, offer, price, dscprice, pernight, tax, imgThumb4,text }) => {
-    return (<>
+const Citycard = (props) => {
+    const { image, imgThumb1, imgThumb2, imgThumb3, rating, ratingText, ratingcount, name, location2, location, item, cancellation, freecancellation, offer, price, dscprice, pernight, tax, imgThumb4,text }=props
+ const handleclick =()=>{
+console.log({ image, imgThumb1, imgThumb2, imgThumb3, rating, ratingText, ratingcount, name, location2, location, item, cancellation, freecancellation, offer, price, dscprice, pernight, tax, imgThumb4,text })
+ }
+ return (<>
        
-    <Box style={{ width: "90%",  display: "flex",  justifyContent: 'space-between', border: "1px solid blue", margin: "10px",backgroundColor:"aliceblue",}} >
+    <Box onClick={handleclick} style={{ width: "90%",  display: "flex",  justifyContent: 'space-between', border: "1px solid blue", margin: "10px",backgroundColor:"aliceblue",}} >
 
             <Box style={{}}>
                     <Box>

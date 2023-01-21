@@ -7,12 +7,12 @@ export default function Final1() {
     <Item1
       name={item.name}
       url={item.imageurl}
-      // price={item.price}
-      // description={item.description}
     />
   ));
   return (
-    <div style={{border:"1px solid blue", height:"100vh"}}>
+    <div style={{height:"60vh", width:"85%",backgroundColor:"white",  margin:"auto",marginBottom:"30px",borderRadius:"10px",padding:"10px"}}>
+     <h1>Handpicked Collections for You</h1>
+
       <Carousel showDots={false} responsive={responsive}>
         {product}
       </Carousel>

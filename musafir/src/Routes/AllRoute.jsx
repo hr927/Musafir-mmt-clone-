@@ -2,6 +2,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
+import GetBookData from "../pages/bookingPage/GetBookData";
 import Destinations from "../pages/Destinations";
 
 import Flights from "../pages/flights/Flights";
@@ -23,6 +24,7 @@ const AllRoute = () => {
       <Route path="/profile" element={<Profile></Profile>}></Route>
       <Route path="/payment" element={<Payment></Payment>}></Route>
       <Route path="/flight" element={<Flights />}></Route>
+      <Route path="/bookNow" element={<GetBookData />}></Route>
       <Route path="/where" element={<Where />}></Route>
       <Route path="/where/:id" element={<Destinations />}></Route>
     </Routes>
