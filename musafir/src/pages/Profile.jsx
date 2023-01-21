@@ -162,7 +162,7 @@ function CustomizedTables2() {
 
 const bs =
   "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px";
-function TabsVertical({scrollToRef}) {
+function TabsVertical({scrollToRef,logOut}) {
   const [value, setValue] = React.useState(0);
   return (
     <Tabs
@@ -211,7 +211,10 @@ function TabsVertical({scrollToRef}) {
           <Typography sx={{ fontSize: "20px" }}> Details</Typography>
         </Tab>
         <Tab
-          onClick={() => setValue(2)}
+          onClick={() => {
+            setValue(2)
+            logOut()
+          }}
           sx={
             value === 2
               ? {
@@ -254,7 +257,12 @@ const Profile = () => {
         console.log(error.message);
       });
   };
+  const userData = useSelector((store) => store.auth.user[0]);
 
+ 
+  const profilePic = userData?.photoURL;
+  const displayName = userData.displayName;
+  const userEmail = userData.email;
   const myRef1 = useRef(null);
   const myRef2 = useRef(null);
 
@@ -290,7 +298,7 @@ const Profile = () => {
             margin: "auto",
           }}
           alt="Remy Sharp"
-          src="/broken-image.jpg"
+          src={profilePic}
           variant="square"
         />
         <Typography
@@ -305,9 +313,9 @@ const Profile = () => {
             marginTop:"10px"
           }}
         >
-          Faisal Mujtaba
+         {displayName}
         </Typography>
-        <TabsVertical scrollToRef={scrollToRef} />
+        <TabsVertical logOut={logOut} scrollToRef={scrollToRef} />
       </Card>
       <Box display={"grid"} gap="20px" sx={{ overflowY: "scroll" }}>
         <Card sx={{ minWidth: 275, border: "1px solid black",padding:"20px" }}>
@@ -341,7 +349,7 @@ const Profile = () => {
           <Button>Edit</Button>
          </Box>
          <Box>
-          <CustomizedTables/>
+          <CustomizedTables />
          </Box>
         </Card>
         <Card sx={{ minWidth: 275, border: "1px solid black",padding:"20px" }}>
