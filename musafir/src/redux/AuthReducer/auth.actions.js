@@ -1,6 +1,7 @@
 import { LOGIN, LOGOUT } from "./auth.types"
 import firebase from "firebase/compat/app";
 import { signInWithEmailAndPassword, getAuth} from "firebase/auth";
+import axios from "axios"
 
 firebase.initializeApp({
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -18,6 +19,7 @@ const firebaseAuth = getAuth();
 
 
 export const loginAction=(payload)=>async(dispatch)=>{
+  Post(payload[0])
 dispatch({
         type:LOGIN,
         payload:payload
@@ -36,6 +38,7 @@ export function signup(email, password) {
         await firebase.auth().createUserWithEmailAndPassword(email, password);
         console.log("success")
         // Dispatch a success action
+        Post({email})
       } catch (error) {
         // Dispatch an error action
       }
@@ -55,4 +58,9 @@ export function signup(email, password) {
         console.log("incorrect Credentials")
       }
     };
+  }
+
+  function Post(data){
+    axios.post(`http://localhost:5000/users`,data)
+    .then((res)=>console.log("added to admin side"))
   }
