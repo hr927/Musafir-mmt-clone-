@@ -1,68 +1,50 @@
-import React from "react";
-// import { makeStyles } from '@material-ui/core/styles';
-import {
-  DatePicker,
-  TimePicker,
-  DateTimePicker,
-  MuiPickersUtilsProvider,
-} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
+import * as React from 'react';
+import { Dayjs } from 'dayjs';
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import { LocalizationProvider } from '@mui/x-date-pickers-pro';
+import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
+import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro/DateRangePicker';
+import { Typography } from '@mui/material';
 
-// const useStyles = makeStyles({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: '10px 0',
-//     },
-//   },
-// });
+export default function Calendar() {
+  const [value, setValue] = React.useState([null,null]);
 
-export default function MaterialUIPickers() {
-  // const classes = useStyles();
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
-  return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <div>
-        <DatePicker
-          disableToolbar
-          variant="inline"
-          format="MM/dd/yyyy"
-          margin="normal"
-          id="date-picker-inline"
-          label="Date picker inline"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            "aria-label": "change date",
-          }}
+  return (<Box style={{color:"white",marginTop:"10px"}}>
+    <LocalizationProvider 
+      dateAdapter={AdapterDayjs}
+      localeText={  { start: 'Check-in', end: 'Check-out' }}
+      >
+      <DateRangePicker
+        value={value}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
+        renderInput={(startProps, endProps) => (
+          <React.Fragment >
+            <TextField   InputProps={{
+    style: {
+      color: 'white',
+      borderRadius:"10px",
+      height:"40px",
+      backgroundColor:"rgb(35,57,81)"
+    },
+  }} {...startProps} />
+            <Box sx={{ mx: 2,color:"white" }}> to </Box>
+            <TextField InputProps={{
+    style: {
+      color: 'white',
+      borderRadius:"10px",
+      height:"40px",
+      // padding:"10px",
+      backgroundColor:"rgb(35,57,81)"
+    },
+  }}{...endProps} />
+          </React.Fragment>
+        )}
         />
-        <TimePicker
-          margin="normal"
-          id="time-picker"
-          label="Time picker"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            "aria-label": "change time",
-          }}
-        />
-        <DateTimePicker
-          margin="normal"
-          id="date-time-picker"
-          label="DateTime picker"
-          value={selectedDate}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            "aria-label": "change date",
-          }}
-        />
-      </div>
-    </MuiPickersUtilsProvider>
+    </LocalizationProvider>
+  
+        </Box>
   );
 }
