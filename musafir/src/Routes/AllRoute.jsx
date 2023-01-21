@@ -2,10 +2,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "../components/Login";
+
+import BuyGifts from "../pages/BuyGifts";
+
 import GetBookData from "../pages/bookingPage/GetBookData";
+
 import Destinations from "../pages/Destinations";
 
 import Flights from "../pages/flights/Flights";
+import Gifts from "../pages/Gifts";
 import { Home } from "../pages/Home/Home";
 
 import Hotel from "../pages/hotels/Hotel";
@@ -19,7 +24,6 @@ const AllRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
-
       <Route path="/hotel" element={<Hotel />}></Route>
       <Route path="/profile" element={<Profile></Profile>}></Route>
       <Route path="/payment" element={<Payment></Payment>}></Route>
@@ -27,6 +31,8 @@ const AllRoute = () => {
       <Route path="/bookNow" element={<GetBookData />}></Route>
       <Route path="/where" element={<Where />}></Route>
       <Route path="/where/:id" element={<Destinations />}></Route>
+      <Route path="/gift-cards" element={<Gifts />}></Route>
+      <Route path="/gift-cards/:id" element={<BuyGifts />}></Route>
     </Routes>
   );
 };
