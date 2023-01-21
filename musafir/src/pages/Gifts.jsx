@@ -16,7 +16,9 @@ const Gifts = () => {
   const [gifts, setGifts] = useState([]);
   const [filter, setFilter] = useState("all");
   const getData = async () => {
-    let response = await axios.get(`http://localhost:8080/giftcards`);
+    let response = await axios.get(
+      `https://musafir-backend.onrender.com/giftcards`
+    );
 
     return response.data;
   };
