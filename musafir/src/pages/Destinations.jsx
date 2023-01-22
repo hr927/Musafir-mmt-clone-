@@ -11,12 +11,14 @@ import {
   Typography,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Loader from "../components/Loader";
 
 const Destinations = () => {
   const { id } = useParams();
   const [places, setPlaces] = useState([]);
   const [heading, setHeading] = useState("");
   const [subhead, setSubHead] = useState("");
+  const [loading, setLoading] = useState(false);
   const getData = async () => {
     let response = await axios.get(
       `https://musafir-backend.onrender.com/destinations/${id}`
@@ -25,13 +27,17 @@ const Destinations = () => {
     return response.data;
   };
   useEffect(() => {
+    setLoading(true);
     getData().then((res) => {
       setPlaces(res.places);
       setHeading(res.heading);
       setSubHead(res.subheading);
+      setLoading(false);
     });
   }, []);
-  console.log(places);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div
       style={{

@@ -11,9 +11,11 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Loader from "../components/Loader";
 
 const Where = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [destinations, setDestinations] = useState([]);
   const getData = async () => {
     let response = await axios.get(
@@ -23,10 +25,16 @@ const Where = () => {
     return response.data;
   };
   useEffect(() => {
-    getData().then((res) => setDestinations(res));
+    setLoading(true);
+    getData().then((res) => {
+      setDestinations(res);
+      setLoading(false);
+    });
   }, []);
 
-  console.log(destinations);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div
       style={{

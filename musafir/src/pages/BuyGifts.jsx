@@ -20,6 +20,7 @@ import PropTypes from "prop-types";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import WalletIcon from "@mui/icons-material/Wallet";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
+import Loader from "../components/Loader";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,6 +89,7 @@ function BuyGifts() {
   const [expiryMonth, setExpiryMonth] = useState("");
   const [expiryYear, setExpiryYear] = useState("");
   const [cvv, setCvv] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handlePayment = () => {
@@ -139,7 +141,11 @@ function BuyGifts() {
     return response.data;
   };
   useEffect(() => {
-    getData().then((res) => setCard(res));
+    setLoading(true);
+    getData().then((res) => {
+      setCard(res);
+      setLoading(false);
+    });
   }, []);
 
   const handleAmountChange = (event) => {
@@ -155,7 +161,9 @@ function BuyGifts() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div
       style={{
