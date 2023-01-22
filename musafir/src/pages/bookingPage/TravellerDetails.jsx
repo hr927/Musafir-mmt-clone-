@@ -35,12 +35,9 @@ const TravellerDetails = () => {
 const Style = styled.div`
   display: grid;
   grid-template-columns: 61.5% 26%;
-  .pay {
-    position: absolute;
-    top: 93px;
-    right: 40px;
-    width: 300px;
-  }
+  width: 1255px;
+  margin-left: -48px;
+
   .div1 {
     height: 270px;
     width: 100%;

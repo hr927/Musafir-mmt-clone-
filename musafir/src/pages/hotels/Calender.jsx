@@ -10,7 +10,7 @@ import { Typography } from '@mui/material';
 export default function Calendar() {
   const [value, setValue] = React.useState([null,null]);
 
-  return (<Box style={{color:"white",marginTop:"10px"}}>
+  return (<Box style={{color:"white",}}>
     <LocalizationProvider 
       dateAdapter={AdapterDayjs}
       localeText={  { start: 'Check-in', end: 'Check-out' }}
@@ -24,20 +24,20 @@ export default function Calendar() {
           <React.Fragment >
             <TextField   InputProps={{
     style: {
-      color: 'white',
+      color: 'black',
       borderRadius:"10px",
-      height:"40px",
-      backgroundColor:"rgb(35,57,81)"
+      // height:"40px",
+    
     },
   }} {...startProps} />
             <Box sx={{ mx: 2,color:"white" }}> to </Box>
             <TextField InputProps={{
     style: {
-      color: 'white',
+      color: 'black',
       borderRadius:"10px",
-      height:"40px",
+      // height:"40px",
       // padding:"10px",
-      backgroundColor:"rgb(35,57,81)"
+      
     },
   }}{...endProps} />
           </React.Fragment>

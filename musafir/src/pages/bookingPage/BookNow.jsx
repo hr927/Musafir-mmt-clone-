@@ -6,6 +6,7 @@ import CancelDetails from "./CancelDetails";
 import TravellerDetails from "./TravellerDetails";
 import PaymentBar from "./PaymentBar";
 import BookingDetailsSend from "./BookingDetailsSend";
+import BookNowButton from "./BookNowButton";
 
 const BookNow = () => {
   return (
@@ -16,6 +17,7 @@ const BookNow = () => {
         <CancelDetails />
         <TravellerDetails />
         <BookingDetailsSend />
+        <BookNowButton />
         {/* <Flightdetailfooter /> */}
       </div>
       <div className="pay_detail">

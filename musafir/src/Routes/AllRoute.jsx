@@ -23,6 +23,7 @@ import PrivateRoute from "./PrivateRoute";
 import BookNow from "../pages/bookingPage/BookNow";
 
 import Admin from "../pages/Admin";
+import Singlehotel from "../pages/hotels/Singlehotel";
 
 
 const AllRoute = () => {
@@ -39,6 +40,7 @@ const AllRoute = () => {
       <Route path="/gift-cards" element={<Gifts />}></Route>
       <Route path="/gift-cards/:id" element={<BuyGifts />}></Route>
       <Route path="/admin" element={<Admin />}></Route>
+      <Route path="/singlehotel" element={<Singlehotel />}></Route>
     </Routes>
   );
 };

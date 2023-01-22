@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 function FlightResult() {
   const [data, setData] = useState([]);
   const [value, setValue] = useState([]);
+  const [value1, setValue1] = useState([]);
+  let dataLS = JSON.parse(localStorage.getItem("dataKey"));
+  console.log("dataLS", dataLS);
   const [newData, setNewData] = useState([]);
-
-  const sortLH = ["price"];
+  // setNewData(dataLS);
 
   useEffect(() => {
     loadFlightData();
@@ -24,45 +26,59 @@ function FlightResult() {
 
   console.log("data", data);
 
-  const handleHigh = (e) => {
-    // sorthigh(e.target.checked);
-  };
-
-  const handleSort = async (e) => {
+  const handleSortLH = async (e) => {
     return await axios
       .get(`http://localhost:8080/data?q=${value}&_sort=price&_order=asc`)
-      .then((response) => setNewData(response.data))
+      .then((response) => handleSortLHE(response.data))
       .catch((err) => console.log(err));
   };
 
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    return await axios
-      .get(`http://localhost:8080/data?q=${value}`)
-      .then((response) => handleNewSearch(response.data))
-      .catch((err) => console.log(err));
-  };
-
-  const handleNewSearch = (a) => {
-    let c = a.filter((e) => {
-      return e.from == value;
+  const handleSortLHE = (a) => {
+    let d = a.filter((e) => {
+      return e.from === value && e.to === value1;
     });
 
-    setNewData(c);
-    console.log("c", c);
+    setNewData(d);
+    console.log("d", d);
   };
-  // console.log(newData);
-  //   const bookData = async (e) => {
+
+  const handleSortHL = async (e) => {
+    return await axios
+      .get(`http://localhost:8080/data?q=${value}&_sort=price&_order=desc`)
+      .then((response) => handleSortHLE(response.data))
+      .catch((err) => console.log(err));
+  };
+
+  const handleSortHLE = (a) => {
+    let f = a.filter((e) => {
+      return e.from === value && e.to === value1;
+    });
+
+    setNewData(f);
+    console.log("f", f);
+  };
+
+  // const handleSearch = async (e) => {
   //   e.preventDefault();
+
   //   return await axios
-  //     .get(`http://localhost:8080/bookData?q=${value}`)
-  //     .then((response) => setData(response.data))
+  //     .get(`http://localhost:8080/data?q=${value}`)
+  //     .then((response) => handleNewSearch(response.data))
   //     .catch((err) => console.log(err));
+  // };
+
+  // const handleNewSearch = (a) => {
+  //   let c = a.filter((e) => {
+  //     return e.from === value && e.to === value1;
+  //   });
+
+  //   setNewData(c);
+  //   console.log("c", c);
   // };
 
   return (
     <div className={styles.container}>
-      <form className="form" onSubmit={handleSearch}>
+      {/* <form className="form" onSubmit={handleSearch}>
         <input
           type="text"
           className="form-control"
@@ -70,20 +86,27 @@ function FlightResult() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
+        <input
+          type="text"
+          className="form-control"
+          placeholder="City Nmae"
+          value={value1}
+          onChange={(e) => setValue1(e.target.value)}
+        />
 
         <button type="submit">Search</button>
-      </form>
+      </form> */}
 
       <div className={styles.left}>
         <div className={styles.filters}>
           <div className={styles.firstFilter}>
             <h3>Sort by price</h3>
             <div className={styles.divi}>
-              <input type="checkbox" onChange={handleSort} />
+              <input type="checkbox" onChange={handleSortLH} />
               <p>Low to High</p>
             </div>
             <div className={styles.divi}>
-              <input type="checkbox" />
+              <input type="checkbox" onChange={handleSortHL} />
               <p>High to Low</p>
             </div>
           </div>
