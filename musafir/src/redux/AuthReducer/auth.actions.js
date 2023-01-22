@@ -78,6 +78,6 @@ export function signup(email, password) {
   }
 
   function Post(data){
-    axios.post(`http://localhost:5000/users`,data)
+    axios.post(`https://musafir-backend.onrender.com/users`,data)
     .then((res)=>console.log("added to admin side"))
   }
