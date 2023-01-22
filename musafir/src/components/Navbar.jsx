@@ -21,13 +21,13 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-  const handleClickFlight = () => navigate("/flights");
+  const handleClickFlight = () => navigate("/flight");
   const handleClickHotels = () => navigate("/hotel");
-  const handleClickHomeWork = () => navigate("/homestay");
+  const handleClickHomeWork = () => navigate("/where");
   const handleClickTrain = () => navigate("/train");
   const handleClickBus = () => navigate("/bus");
   const handleClickCabs = () => navigate("/cab");
-  const handleClickVisa = () => navigate("/visa");
+  const handleClickVisa = () => navigate("/gift-cards");
   const handleClickCharter = () => navigate("/charter");
   const handleClickActivities = () => navigate("/activitie");
 
@@ -44,7 +44,7 @@ const Navbar = () => {
             {/* logo wrapper */}
             <div className={styles.logoWrapper}>
               <a href="/" className={styles.logoimg}>
-                <img src="./Images/logo.png" alt="Logo" />
+                <img src="https://i.ibb.co/P1c5Cs8/Musafir-3-removebg-preview.png" alt="Logo" />
               </a>
             </div>
             {/* hamberger menu */}
@@ -121,7 +121,7 @@ const Navbar = () => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></CreditCardIcon>
                 </span>
-                <p style={{ marginTop: "0px" }}>Visa</p>
+                <p style={{ marginTop: "0px" }}>Gift</p>
               </div>
               <div onClick={handleClickCharter}>
                 <span>

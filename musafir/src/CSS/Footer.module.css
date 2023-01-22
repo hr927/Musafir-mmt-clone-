@@ -4,10 +4,8 @@
     box-sizing: border-box;
     max-width: 100%;
     background-color: #000000;
-
     display: flex;
     justify-content: space-between;
-
     align-items: center;
 
 }
@@ -88,5 +86,17 @@
 
     .country {
         font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .container {
+        padding: 10px;
+        flex-direction: column;
+        /* font-size: 9px; */
+    }
+    .f_cright {
+        gap:15px;
+        
     }
 }
