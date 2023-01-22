@@ -9,9 +9,8 @@ import Final1 from "../../components/Carousel1/Final";
 import Details from "../Details";
 import Final2 from "../../components/Carousel2/Final";
 import Qna from "../Qna";
-import Header from "../../components/Header"
+import Header from "../../components/Header";
 import Footer from "../Footer";
-
 
 export const Home = () => {
   const { setWidth } = useContext(ListenerContext);
@@ -28,9 +27,8 @@ export const Home = () => {
   };
   return (
     <>
-     <Header/>
+      <Header />
       <div className={styles.container} style={{ boxSizing: "border-box" }}>
-       
         <div style={{ marginTop: 50 }}>
           <Carousal />
         </div>
@@ -53,7 +51,6 @@ export const Home = () => {
       <Final2 />
       <Details />
       <Qna />
-      <Footer/>
     </>
   );
 };
