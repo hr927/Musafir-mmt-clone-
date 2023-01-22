@@ -41,6 +41,7 @@ export const Home = () => {
           <img
             src="https://mmt.servedbyadbutler.com/getad.img/;libID=3707123"
             style={{ width: "100%", height: "80%" }}
+            alt="1"
           />
         </div>
         <div style={{ marginTop: 50 }}>

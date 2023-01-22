@@ -167,7 +167,7 @@ function TabsVertical({ scrollToRef, logOut }) {
       aria-label="Vertical tabs"
       orientation="vertical"
       defaultValue={0}
-      sx={{ minWidth: 300, borderRadius: "lg" }}
+      sx={{ minWidth: 300, borderRadius: "lg",margin:"auto" }}
     >
       <TabList sx={{ border: "1px solid black", margin: "auto", mt: "30px" }}>
         <Tab
@@ -279,10 +279,10 @@ const Profile = () => {
 
   return (
     <Box
-      sx={{ width: "80%", margin: "auto", marginTop: "20px" }}
+      sx={{ width: "80%", margin: "auto", marginTop:{xs:"100px",md:"100px",lg:"200px"} }}
       display="grid"
       direction="row"
-      gridTemplateColumns="30% 70%"
+      gridTemplateColumns={{xs:"80%",md:"80%",lg:"30% 70%"}}
       gap={2}
     >
       <Card
@@ -290,14 +290,14 @@ const Profile = () => {
           minWidth: 275,
           maxHeight: "400px",
           border: "1px solid black",
-          padding: "20px",
+          padding: "30px",
         }}
       >
         <Avatar
           sx={{
             bgcolor: lightGreen[400],
             width: "40%",
-            height: "40%",
+            height: "35%",
             margin: "auto",
           }}
           alt="Remy Sharp"
@@ -320,7 +320,7 @@ const Profile = () => {
         </Typography>
         <TabsVertical logOut={logOut} scrollToRef={scrollToRef} />
       </Card>
-      <Box display={"grid"} gap="20px" sx={{ overflowY: "scroll" }}>
+      <Box display={"grid"} gap="20px" >
         <Card
           sx={{ minWidth: 275, border: "1px solid black", padding: "20px" }}
         >
