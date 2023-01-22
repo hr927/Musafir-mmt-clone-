@@ -102,7 +102,7 @@ const Admin = () => {
   const smallScreen = useMediaQuery("(max-width: 600px)");
   const mediumScreen = useMediaQuery("(max-width: 960px)");
   return (
-    <div>
+    <div style={{ paddingTop: "100px" }}>
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ color: "black" }}>

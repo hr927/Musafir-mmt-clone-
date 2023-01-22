@@ -72,6 +72,12 @@ function BuyGifts() {
   const [amount, setAmount] = useState(1000);
   const [sendVia, setSendVia] = useState("whatsapp");
   const [total, setTotal] = useState(amount);
+  const [sender, setSender] = useState("");
+  const [senderNum, setSenderNum] = useState("");
+  const [senderMail, setSenderMail] = useState("");
+  const [recip, setRecip] = useState("");
+  const [recipNum, setRecipNum] = useState("");
+  const [recipMail, setRecipMail] = useState("");
   const [card, setCard] = useState({});
   const [open, setOpen] = React.useState(false);
   const [upi, setUPI] = useState("");
@@ -158,6 +164,7 @@ function BuyGifts() {
         width: "90%",
         padding: "10px",
         margin: "auto",
+        paddingTop: "100px",
       }}
     >
       <div style={{ display: "flex", width: "90%", margin: "auto" }}>
@@ -225,7 +232,27 @@ function BuyGifts() {
             color="primary"
             disabled={amount < 100}
             onClick={() => {
-              handleOpen();
+              if (sendVia === "whatsapp") {
+                if (sender === "" || senderMail === "" || senderNum === "") {
+                  alert("Please Enter All the Details");
+                  return;
+                }
+                handleOpen();
+              }
+              if (sendVia === "email") {
+                if (
+                  sender === "" ||
+                  senderMail === "" ||
+                  senderNum === "" ||
+                  recip === "" ||
+                  recipMail === "" ||
+                  recipNum === ""
+                ) {
+                  alert("Please Enter All the Details");
+                  return;
+                }
+                handleOpen();
+              }
             }}
           >
             Buy Now
@@ -438,6 +465,8 @@ function BuyGifts() {
               <TextField
                 required
                 id="filled-required"
+                value={sender}
+                onChange={(e) => setSender(e.target.value)}
                 label="Sender's Name"
                 variant="outlined"
               />
@@ -456,6 +485,8 @@ function BuyGifts() {
                   required
                   id="filled-required"
                   label="Sender's Mobile"
+                  value={senderNum}
+                  onChange={(e) => setSenderNum(e.target.value)}
                   variant="outlined"
                 />
               </Box>
@@ -463,6 +494,8 @@ function BuyGifts() {
                 required
                 id="filled-required"
                 label="Sender's Email"
+                value={senderMail}
+                onChange={(e) => setSenderMail(e.target.value)}
                 variant="outlined"
               />
             </div>
@@ -489,7 +522,9 @@ function BuyGifts() {
                 <TextField
                   required
                   id="filled-required"
-                  label="Sender's Name"
+                  label="Recipient's Name"
+                  value={recip}
+                  onChange={(e) => setRecip(e.target.value)}
                   variant="outlined"
                 />
                 <Box>
@@ -501,19 +536,23 @@ function BuyGifts() {
                     InputProps={{
                       readOnly: true,
                     }}
-                    sx={{ width: "10%" }}
+                    sx={{ width: "12%" }}
                   />{" "}
                   <TextField
                     required
                     id="filled-required"
-                    label="Sender's Mobile"
+                    label="Recipient's Mobile"
+                    value={recipNum}
+                    onChange={(e) => setRecipNum(e.target.value)}
                     variant="outlined"
                   />
                 </Box>
                 <TextField
                   required
                   id="filled-required"
-                  label="Sender's Email"
+                  label="Recipient's Email"
+                  value={recipMail}
+                  onChange={(e) => setRecipMail(e.target.value)}
                   variant="outlined"
                 />
                 <TextField

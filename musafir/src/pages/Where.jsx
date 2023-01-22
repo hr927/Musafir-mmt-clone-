@@ -31,6 +31,7 @@ const Where = () => {
     <div
       style={{
         backgroundColor: "#212122",
+        paddingTop: "100px",
       }}
     >
       <div

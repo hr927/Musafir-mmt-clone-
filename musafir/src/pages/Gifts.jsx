@@ -36,7 +36,7 @@ const Gifts = () => {
     getData().then((res) => setGifts(res));
   }, []);
   return (
-    <div>
+    <div style={{ paddingTop: "100px" }}>
       <div style={{ display: "flex", width: "80%", margin: "auto" }}>
         <div style={{ flex: "1" }}>
           <div>

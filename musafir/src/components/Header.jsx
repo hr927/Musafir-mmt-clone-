@@ -38,6 +38,7 @@ import {
 import { useState } from "react";
 import { isBefore } from "date-fns";
 import { fontSize, width } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,6 +89,8 @@ export default function Header() {
   const [value, setValue] = React.useState(0);
   const [departure, setDeparture] = useState("");
   const [returnDate, setReturnDate] = useState("");
+  const [from, setFrom] = useState("Mumbai");
+  const [to, setTo] = useState("Delhi");
   const [open, setOpen] = React.useState(false);
   const [travellers, setTravellers] = useState("");
   const [family, setFamily] = useState("");
@@ -106,7 +109,10 @@ export default function Header() {
   const [fair, setFair] = useState("Regular Fairs");
   const [trip, setTrip] = useState("Round Trip");
   const [cabTime, setCabTime] = useState("03:00 AM");
+  const [travel, setTravel] = useState({});
   const [passenger, setPassenger] = useState(1);
+
+  const navigate = useNavigate();
 
   if (isBefore(new Date(returnDate), new Date(departure))) {
     alert("Please choose correct date");
@@ -150,6 +156,7 @@ export default function Header() {
         width: "70%",
         margin: "auto",
         padding: "10px",
+        paddingTop: "120px",
         border: "1px solid #f2f2f2",
         borderRadius: "5px",
       }}
@@ -223,6 +230,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
@@ -230,6 +241,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={to}
+              onChange={(event, newValue) => {
+                setTo(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
@@ -436,7 +451,16 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+              onClick={() => {
+                setTravel({ from: from, to: to });
+                navigate("/flight");
+              }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -472,6 +496,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => (
                 <TextField {...params} label="CITY,PROPERTY NAME OR LOCATION" />
@@ -585,7 +613,16 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+              onClick={() => {
+                setTravel({ from: from, to: to });
+                navigate("/hotel");
+              }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -599,6 +636,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => (
                 <TextField {...params} label="CITY,PROPERTY NAME OR LOCATION" />
@@ -756,7 +797,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -767,6 +813,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
@@ -774,6 +824,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={to}
+              onChange={(event, newValue) => {
+                setTo(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
@@ -856,7 +910,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -865,7 +924,6 @@ export default function Header() {
           <p
             style={{
               textAlign: "center",
-              marginBottom: "-15px",
               fontWeight: "bold",
             }}
           >
@@ -879,6 +937,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
@@ -886,6 +948,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={to}
+              onChange={(event, newValue) => {
+                setTo(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
@@ -931,7 +997,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -952,6 +1023,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 500 }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
@@ -984,7 +1059,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -1018,6 +1098,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={from}
+              onChange={(event, newValue) => {
+                setFrom(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
@@ -1025,6 +1109,10 @@ export default function Header() {
               disablePortal
               id="combo-box-demo"
               options={cities}
+              value={to}
+              onChange={(event, newValue) => {
+                setTo(newValue);
+              }}
               sx={{ width: 300 }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
@@ -1179,7 +1267,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -1318,7 +1411,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Get Started</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Get Started
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -1418,7 +1516,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -1442,7 +1545,12 @@ export default function Header() {
               alignContent: "center",
             }}
           >
-            <Button variant="contained">Search</Button>
+            <Button
+              variant="contained"
+              sx={{ fontSize: "20px", marginTop: "10px" }}
+            >
+              Search
+            </Button>
           </Box>
         </Box>
       </TabPanel>
@@ -1451,14 +1559,14 @@ export default function Header() {
 }
 
 const cities = [
-  { label: "Mumbai" },
-  { label: "Delhi" },
-  { label: "Kolkata" },
-  { label: "Chennai" },
-  { label: "Bangalore" },
-  { label: "Hyderabad" },
-  { label: "Ahmedabad" },
-  { label: "Pune" },
-  { label: "Surat" },
-  { label: "Jaipur" },
+  "Mumbai",
+  "Delhi",
+  "Kolkata",
+  "Chennai",
+  "Bangalore",
+  "Hyderabad",
+  "Ahmedabad",
+  "Pune",
+  "Surat",
+  "Jaipur",
 ];
