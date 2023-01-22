@@ -29,12 +29,12 @@ const BookingDetailsSend = () => {
   );
 };
 const Style = styled.div`
-  width: 61.6%;
-  margin-left: 70px;
+  width: 86%;
+  margin-left: 20px;
 
   #main {
     padding: 2%;
-    width: 93%;
+    width: 90%;
     border-radius: 8px;
     background-color: white;
     margin: auto;
@@ -44,14 +44,15 @@ const Style = styled.div`
       line-height: 5px;
       input {
         padding: 3%;
-        width: 220px;
+        width: 180px;
         height: 27px;
+        border-radius: 7px;
       }
       select {
-        width: 220px;
+        width: 180px;
         padding: 3%;
         border-radius: 7px;
-        height: 44px;
+        height: 40px;
       }
     }
   }
