@@ -10,6 +10,8 @@
   position: relative;
   /* border: 1px solid green; */
   height: auto;
+  padding-top: 100px;
+  
 }
 .flight_container {
   /* border: 10px solid green; */

@@ -31,12 +31,9 @@ const Bookingheader = () => {
 
 const Bookingheadercss = styled.div`
   .jello {
-    position: fixed;
-    top: 0;
     width: 100%;
     height: 70px;
     background-color: black;
-    z-index: 100;
   }
   .bookingheader {
     // background-color: #041422;

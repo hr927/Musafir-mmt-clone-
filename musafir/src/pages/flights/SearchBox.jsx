@@ -462,7 +462,7 @@ const SearchBox = () => {
                   localStorage.setItem("bookData", JSON.stringify(e));
                 }}
               >
-                <Link to="/bookNow">BOOK NOW</Link>
+                <Link to="/booking">BOOK NOW</Link>
               </button>
             </div>
           ))}
