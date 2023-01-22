@@ -20,6 +20,13 @@ const firebaseAuth = getAuth();
 
 export const loginAction=(payload)=>async(dispatch)=>{
   Post(payload[0])
+
+  let obj={
+    isLoggedIn:true,
+    user:payload
+  }
+
+  localStorage.setItem("cache",JSON.stringify(obj))
 dispatch({
         type:LOGIN,
         payload:payload
@@ -27,6 +34,7 @@ dispatch({
 }
 
 export const logoutAction=()=>{
+  localStorage.setItem("cache",null)
     return {
         type:LOGOUT
     }
@@ -52,6 +60,13 @@ export function signup(email, password) {
       try {
         await signInWithEmailAndPassword(firebaseAuth, email, password);
         // Dispatch a success action
+        let obj={
+          isLoggedIn:true,
+          user:[{email:email,displayName:email}]
+        }
+      
+        localStorage.setItem("cache",JSON.stringify(obj))
+
         dispatch({type:LOGIN,
          payload:[{email:email,displayName:email}]
         })
