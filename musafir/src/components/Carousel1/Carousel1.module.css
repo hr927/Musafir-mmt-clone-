@@ -1,0 +1,9 @@
+@media screen and (max-width:575px){
+    .main_div{
+    margin-top:-30px;
+
+    }
+    .main_div>h1{
+        font-size: 18px;
+    }
+}

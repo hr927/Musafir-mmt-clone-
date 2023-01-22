@@ -19,7 +19,11 @@ import Payment from "../pages/Payment";
 import Profile from "../pages/Profile";
 import Where from "../pages/Where";
 import PrivateRoute from "./PrivateRoute";
+
 import BookNow from "../pages/bookingPage/BookNow";
+
+import Admin from "../pages/Admin";
+
 
 const AllRoute = () => {
   return (
@@ -34,6 +38,7 @@ const AllRoute = () => {
       <Route path="/where/:id" element={<Destinations />}></Route>
       <Route path="/gift-cards" element={<Gifts />}></Route>
       <Route path="/gift-cards/:id" element={<BuyGifts />}></Route>
+      <Route path="/admin" element={<Admin />}></Route>
     </Routes>
   );
 };
