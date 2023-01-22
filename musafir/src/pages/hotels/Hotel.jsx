@@ -33,7 +33,7 @@ const Hotel = () => {
   // console.log(delhi)
   
   const [Data,setData]=useState([])
-
+const [reset,setreset]=useState(true)
 
 
   const handleChange = (e) => {
@@ -70,7 +70,7 @@ const Hotel = () => {
     .filter((key) => key === input)
     .map((key) => hotels[key]);
      setData(mumbaiData[0])
-  },[])
+  },[reset])
 
   function Filter(value1,value2){
     let temp = Object.keys(hotels)
@@ -295,7 +295,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input onChange={()=>Filter(0,2000)} type="checkbox" /> ₹ 0 - ₹ 2000 (62)
+            <input onChange={(e)=>{
+             e.target.checked?Filter(0,2000):setreset(!reset)
+            }} type="checkbox" /> ₹ 0 - ₹ 2000 (62)
           </label>
           <label
             style={{
@@ -307,7 +309,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={()=>Filter(2000,3500)} /> ₹ 2000 - ₹ 3500 (57)
+            <input type="checkbox" onChange={(e)=>{
+             e.target.checked?Filter(2000,3500):setreset(!reset)
+            }}  /> ₹ 2000 - ₹ 3500 (57)
           </label>
           <label
             style={{
@@ -319,7 +323,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"  onChange={()=>Filter(3500,7500)} /> ₹ 3500 - ₹ 7500 (42)
+            <input type="checkbox" onChange={(e)=>{
+             e.target.checked?Filter(3500,7500):setreset(!reset)
+            }}   /> ₹ 3500 - ₹ 7500 (42)
           </label>
           <label
             style={{
@@ -331,7 +337,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"  onChange={()=>Filter(7500,11500)} /> ₹ 7500 - ₹ 11500 (2)
+            <input type="checkbox" onChange={(e)=>{
+             e.target.checked?Filter(7500,11500):setreset(!reset)
+            }}   /> ₹ 7500 - ₹ 11500 (2)
           </label>
           <label
             style={{
@@ -343,7 +351,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"  onChange={()=>Filter(11500,15000)} /> ₹ 11500 - ₹ 15000 (0)
+            <input type="checkbox" onChange={(e)=>{
+             e.target.checked?Filter(11500,15000):setreset(!reset)
+            }}  /> ₹ 11500 - ₹ 15000 (0)
           </label>
           <label
             style={{
@@ -355,7 +365,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"   onChange={()=>Filter(15000,30000)}/> ₹ 15000 - ₹ 30000 (1)
+            <input type="checkbox"  onChange={(e)=>{
+             e.target.checked?Filter(15000,30000):setreset(!reset)
+            }}  /> ₹ 15000 - ₹ 30000 (1)
           </label>
           <label
             style={{
@@ -367,7 +379,9 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"  onChange={()=>Filter(30000,70000)} /> ₹ 30000+ (0)
+            <input type="checkbox" onChange={(e)=>{
+             e.target.checked?Filter(30000,70000):setreset(!reset)
+            }}   /> ₹ 30000+ (0)
           </label>
 
           <Typography

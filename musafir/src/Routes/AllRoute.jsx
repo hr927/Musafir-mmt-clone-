@@ -34,7 +34,6 @@ const AllRoute = () => {
       <Route path="/where/:id" element={<Destinations />}></Route>
       <Route path="/gift-cards" element={<Gifts />}></Route>
       <Route path="/gift-cards/:id" element={<BuyGifts />}></Route>
-      <Route path="/admin" element={<h1>admin</h1>}></Route>
     </Routes>
   );
 };
