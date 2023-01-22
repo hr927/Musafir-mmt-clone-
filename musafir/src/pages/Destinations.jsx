@@ -18,7 +18,9 @@ const Destinations = () => {
   const [heading, setHeading] = useState("");
   const [subhead, setSubHead] = useState("");
   const getData = async () => {
-    let response = await axios.get(`http://localhost:8080/destinations/${id}`);
+    let response = await axios.get(
+      `https://musafir-backend.onrender.com/destinations/${id}`
+    );
 
     return response.data;
   };

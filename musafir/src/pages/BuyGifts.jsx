@@ -127,7 +127,9 @@ function BuyGifts() {
   };
 
   const getData = async () => {
-    let response = await axios.get(`http://localhost:8080/giftcards/${id}`);
+    let response = await axios.get(
+      `https://musafir-backend.onrender.com/giftcards/${id}`
+    );
     return response.data;
   };
   useEffect(() => {

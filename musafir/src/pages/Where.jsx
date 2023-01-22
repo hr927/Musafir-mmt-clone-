@@ -16,7 +16,9 @@ const Where = () => {
   const navigate = useNavigate();
   const [destinations, setDestinations] = useState([]);
   const getData = async () => {
-    let response = await axios.get(`http://localhost:8080/destinations`);
+    let response = await axios.get(
+      `https://musafir-backend.onrender.com/destinations`
+    );
 
     return response.data;
   };
