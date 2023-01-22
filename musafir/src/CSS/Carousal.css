@@ -215,4 +215,22 @@
     .knowMore p {
         font-size: 12px;
     }
+
+    .sliderLinks{
+       display: none; 
+    }
+
+   .ind-slide{
+    flex-direction: column;
+    justify-content: center;
+   
+   } 
+   .contentSection{
+    justify-content: center;
+   align-content: center;
+}
+.knowMore{
+    justify-content: center;
+    padding: 5px;
+}
 }
