@@ -6,20 +6,7 @@ import WalletIcon from "@mui/icons-material/Wallet";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  FormControl,
-  Select,
-  MenuItem,
-  TextField,
-  Button,
-  Typography,
-  AccordionDetails,
-  AccordionSummary,
-  Accordion,
-  Modal,
-  Tab,
-  Tabs,
-} from "@mui/material";
+import { TextField, Button, Typography, Modal, Tab, Tabs } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Singlehotel = () => {

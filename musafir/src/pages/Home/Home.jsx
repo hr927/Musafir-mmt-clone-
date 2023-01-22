@@ -10,7 +10,6 @@ import Details from "../Details";
 import Final2 from "../../components/Carousel2/Final";
 import Qna from "../Qna";
 import Header from "../../components/Header";
-import Footer from "../Footer";
 
 export const Home = () => {
   const { setWidth } = useContext(ListenerContext);
