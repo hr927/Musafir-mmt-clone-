@@ -26,19 +26,19 @@ const Hotel = () => {
   const [value, setValue] = useState(cities[0]);
   const [Data, setData] = useState([])
   const [reset, setreset] = useState(true)
-  let input = value;
+  // let input = value;
   console.log(value);
 
   React.useEffect(() => {
     let mumbaiData = Object.keys(hotels)
-      .filter((key) => key === input)
+      .filter((key) => key === value)
       .map((key) => hotels[key]);
     setData(mumbaiData[0])
-  }, [reset])
+  }, [reset,value])
 
   function Filter(value1, value2) {
     let temp = Object.keys(hotels)
-      .filter((key) => key === input)
+      .filter((key) => key === value)
       .map((key) => hotels[key]);
 
     let filteredData = temp[0].filter((el) => {
