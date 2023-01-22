@@ -369,6 +369,11 @@ margin-top: 15px;
 .bookNow{
   height: 25px;
   margin-top: 25px;
+  background-color: #3339e9;
+ 
+  border: none;
+  border-radius: 5%;
+  text-decoration:none;
 }
 
 .filters {

@@ -36,7 +36,7 @@ const SearchBox = () => {
 
   const handleSearch = async () => {
     return await axios
-      .get(`http://localhost:8080/data?q=${from}`)
+      .get(`https://musafir-backend.onrender.com/flights?q=${from}`)
       .then((response) => handleNewSearch(response.data))
       .catch((err) => console.log(err));
   };
@@ -72,7 +72,7 @@ const SearchBox = () => {
 
   const loadFlightData = async () => {
     return await axios
-      .get("http://localhost:8080/data")
+      .get("https://musafir-backend.onrender.com/flights")
       .then((response) => setData(response.data))
       .catch((err) => console.log(err));
   };
@@ -81,7 +81,9 @@ const SearchBox = () => {
 
   const handleSortLH = async (e) => {
     return await axios
-      .get(`http://localhost:8080/data?q=${from}&_sort=price&_order=asc`)
+      .get(
+        `https://musafir-backend.onrender.com/flights?q=${from}&_sort=price&_order=asc`
+      )
       .then((response) => handleSortLHE(response.data))
       .catch((err) => console.log(err));
   };
@@ -97,7 +99,9 @@ const SearchBox = () => {
 
   const handleSortHL = async (e) => {
     return await axios
-      .get(`http://localhost:8080/data?q=${from}&_sort=price&_order=desc`)
+      .get(
+        `https://musafir-backend.onrender.com/flights?q=${from}&_sort=price&_order=desc`
+      )
       .then((response) => handleSortHLE(response.data))
       .catch((err) => console.log(err));
   };
@@ -451,7 +455,7 @@ const SearchBox = () => {
                 <br />
                 <div>{e.to}</div>
               </div>
-              <div className={styles.price}>{e.price}</div>
+              <div className={styles.price}>Rs.{e.price}</div>
               <button
                 class={styles.bookNow}
                 onClick={() => {
