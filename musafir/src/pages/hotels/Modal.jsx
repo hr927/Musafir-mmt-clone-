@@ -103,7 +103,7 @@ export default function Header({Filter}) {
 
         <Stack direction="row" spacing={2}>
         <Calendar />
-           <Box sx={{ backgroundColor: "#eaf5ff", padding: "10px", borderRadius: "5px", cursor: "pointer",}} onClick={handleOpen}>
+           <Box sx={{width:"150px", color: "grey", padding: "10px",fontSize:"16px", borderRadius: "5px",border:"1px solid grey", cursor: "pointer",}} onClick={handleOpen}>
             {family ? family : "Room and Guests"}
           </Box>
 
@@ -113,7 +113,7 @@ export default function Header({Filter}) {
               Price per Night
             </InputLabel>
 
-            <Select style={{ color: "white",width:"150px" }}
+            <Select style={{ color: "grey",width:"150px", }}
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={roomPrice}
@@ -173,7 +173,7 @@ export default function Header({Filter}) {
             </Box>
           </Modal>
 
-          <Button sx={{display: "flex",justifyContent: "center",margin: "auto",alignContent: "center",}} variant="contained">Search</Button>
+          {/* <Button sx={{display: "flex",justifyContent: "center",margin: "auto",alignContent: "center",}} variant="contained">Search</Button> */}
         </Stack>
 
       </Box>

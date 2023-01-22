@@ -1,86 +1,50 @@
 import {
-  Alert,
-  AlertTitle,
-  Button,
-  Checkbox,
+  Autocomplete,
   FormControl,
-  FormControlLabel,
-  InputLabel,
-  MenuItem,
-  Select,
   TextField,
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
-import Calendar from "./Calender";
 import hotels from "../../hotel.json";
 import Citycard from "./Citycard";
-// import Navbar from "./Hotelnavbar"
-// import MaterialUIPickers from "./Calender"
-import CheckboxComponent from "./Input";
 import Modals from "./Modal";
-// import Calendar from 'react-calendar';
+const cities = [
+  "Mumbai",
+  "Delhi",
+  "Kolkata",
+  "Chennai",
+  "Bangalore",
+  "Hyderabad",
+  "Ahmedabad",
+  "Pune",
+  "Surat",
+  "Jaipur"
+]
+
 const Hotel = () => {
-  const [mumbai, setMumbai] = useState(hotels.mumbai);
-  const [pune, setpune] = useState(hotels.pune);
-  const [delhi, setdelhi] = useState(hotels.delhi);
-  const [nagpur, setnagpur] = useState(hotels.nagpur);
-  const [value, setValue] = useState("mumbai");
-  const [data, setdata] = useState([]);
-  // console.log(mumbai)
-  // console.log(pune)
-  // console.log(delhi)
-  
-  const [Data,setData]=useState([])
-const [reset,setreset]=useState(true)
-
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // make api call with search term
-  };
-  const handleclick = () => {};
-  let input = value;
-  
-  
-
-    
-  
-  
-
+  const [value, setValue] = useState(cities[0]);
+  const [Data, setData] = useState([])
+  const [reset, setreset] = useState(true)
+  // let input = value;
   console.log(value);
-  const style = {
-    position: "absolute",
-    marginTop: "50%",
-    marginLeft: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
-  };
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     let mumbaiData = Object.keys(hotels)
-    .filter((key) => key === input)
-    .map((key) => hotels[key]);
-     setData(mumbaiData[0])
-  },[reset])
+      .filter((key) => key === value)
+      .map((key) => hotels[key]);
+    setData(mumbaiData[0])
+  }, [reset,value])
 
-  function Filter(value1,value2){
+  function Filter(value1, value2) {
     let temp = Object.keys(hotels)
-    .filter((key) => key === input)
-    .map((key) => hotels[key]);
+      .filter((key) => key === value)
+      .map((key) => hotels[key]);
 
-    let filteredData=temp[0].filter((el)=>{
-      let x=+el.discprice.split(",").map(String).join("")
+    let filteredData = temp[0].filter((el) => {
+      let x = +el.discprice.split(",").map(String).join("")
 
-      return x>value1 && x!=="" && x<value2
+      return x > value1 && x !== "" && x < value2
     })
     setData(filteredData)
   }
@@ -90,70 +54,32 @@ const [reset,setreset]=useState(true)
     <>
       <Box
         style={{
-          backgroundColor: "rgb(10,34,61)",
+          backgroundColor: "aliceblue",
           width: "100%",
           height: "70px",
-          position: "sticky",
+
           top: "105px",
           display: "flex",
+          position: "fixed",
+          padding:"10px"
         }}
       >
-        <FormControl sx={{ color: "white", fontSize: "10px" }}>
-          <InputLabel
-            style={{
-              color: " rgb(0, 132, 255)",
-              fontSize: "15px",
-              height: "30px",
-              width: "450px",
-              margin: "10px",
-            }}
-          >
-            {" "}
-            City,Area Or Property
-          </InputLabel>
-          <Select
-            style={{
-              color: "white",
-              fontSize: "20px",
-              height: "20px",
-              width: "200px",
-              margin: "20px",
-            }}
-            labelId="demo-simple-select-label"
+        <FormControl sx={{ color: "white", fontSize: "10px",padding:"10px" }}>
+
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            options={cities}
+            sx={{ width: 300 }}
             value={value}
-            label="Select City"
-            onChange={handleChange}
-          >
-            <MenuItem value={"delhi"}>Delhi</MenuItem>
-            <MenuItem value={"mumbai"}>Mumbai</MenuItem>
-            <MenuItem value={"nagpur"}>Nagpur</MenuItem>
-            <MenuItem value={"pune"}>Pune</MenuItem>
-          </Select>
+            onChange={(event, newValue) => { setValue( newValue) }}
+            renderInput={(params) => <TextField style={{ color: "red" }} {...params} label="city are or property" />}
+          />
         </FormControl>
         <Modals Filter={Filter} />
       </Box>
 
-      <Box
-        style={{
-          backgroundColor: " rgb(207,233,252)",
-          width: "100%",
-          height: "100px",
-        }}
-      ></Box>
-      <Box
-        style={{
-          backgroundColor: " rgb(207,233,252)",
-          width: "100%",
-          height: "70px",
-          position: "sticky",
-          top: "155px",
-        }}
-      >
-        helloo
-      </Box>
-      {/* </Box> */}
-
-      <Box></Box>
+     
 
       <Box
         sx={{
@@ -162,6 +88,7 @@ const [reset,setreset]=useState(true)
           width: "90%",
           gap: "10px",
           margin: "auto",
+          marginTop:"200px"
         }}
       >
         <Box
@@ -171,6 +98,7 @@ const [reset,setreset]=useState(true)
             display: "flex",
             flexDirection: "column",
             alignContent: "flex-start",
+            
           }}
         >
           <Typography
@@ -295,8 +223,8 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input onChange={(e)=>{
-             e.target.checked?Filter(0,2000):setreset(!reset)
+            <input onChange={(e) => {
+              e.target.checked ? Filter(0, 2000) : setreset(!reset)
             }} type="checkbox" /> ₹ 0 - ₹ 2000 (62)
           </label>
           <label
@@ -309,9 +237,9 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e)=>{
-             e.target.checked?Filter(2000,3500):setreset(!reset)
-            }}  /> ₹ 2000 - ₹ 3500 (57)
+            <input type="checkbox" onChange={(e) => {
+              e.target.checked ? Filter(2000, 3500) : setreset(!reset)
+            }} /> ₹ 2000 - ₹ 3500 (57)
           </label>
           <label
             style={{
@@ -323,9 +251,9 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e)=>{
-             e.target.checked?Filter(3500,7500):setreset(!reset)
-            }}   /> ₹ 3500 - ₹ 7500 (42)
+            <input type="checkbox" onChange={(e) => {
+              e.target.checked ? Filter(3500, 7500) : setreset(!reset)
+            }} /> ₹ 3500 - ₹ 7500 (42)
           </label>
           <label
             style={{
@@ -337,9 +265,9 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e)=>{
-             e.target.checked?Filter(7500,11500):setreset(!reset)
-            }}   /> ₹ 7500 - ₹ 11500 (2)
+            <input type="checkbox" onChange={(e) => {
+              e.target.checked ? Filter(7500, 11500) : setreset(!reset)
+            }} /> ₹ 7500 - ₹ 11500 (2)
           </label>
           <label
             style={{
@@ -351,9 +279,9 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e)=>{
-             e.target.checked?Filter(11500,15000):setreset(!reset)
-            }}  /> ₹ 11500 - ₹ 15000 (0)
+            <input type="checkbox" onChange={(e) => {
+              e.target.checked ? Filter(11500, 15000) : setreset(!reset)
+            }} /> ₹ 11500 - ₹ 15000 (0)
           </label>
           <label
             style={{
@@ -365,9 +293,9 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"  onChange={(e)=>{
-             e.target.checked?Filter(15000,30000):setreset(!reset)
-            }}  /> ₹ 15000 - ₹ 30000 (1)
+            <input type="checkbox" onChange={(e) => {
+              e.target.checked ? Filter(15000, 30000) : setreset(!reset)
+            }} /> ₹ 15000 - ₹ 30000 (1)
           </label>
           <label
             style={{
@@ -379,9 +307,9 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e)=>{
-             e.target.checked?Filter(30000,70000):setreset(!reset)
-            }}   /> ₹ 30000+ (0)
+            <input type="checkbox" onChange={(e) => {
+              e.target.checked ? Filter(30000, 70000) : setreset(!reset)
+            }} /> ₹ 30000+ (0)
           </label>
 
           <Typography
@@ -407,7 +335,7 @@ const [reset,setreset]=useState(true)
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox"  />5 star (16)
+            <input type="checkbox" />5 star (16)
           </label>
           <label
             style={{
@@ -912,19 +840,7 @@ const [reset,setreset]=useState(true)
             width: "90%",
           }}
         >
-          <Typography
-            sx={{
-              padding: "10px",
-              fontFamily: "Lato",
-              fontSize: "22px",
-              fontWeight: 700,
-              lineHeight: "22px",
-              color: "RGB(0, 0, 0)",
-            }}
-          >
-            {" "}
-            {`Showing Results for ${value.toUpperCase()}`}{" "}
-          </Typography>
+
           {Data.map((e) => (
             <Citycard
               key={e.id}
@@ -948,22 +864,17 @@ const [reset,setreset]=useState(true)
               offer={e.offer}
               ratingcount={e.blackText}
               text={e.font11}
+              value1={e.value1}
+              value2={e.value2}
+              value3={e.value3}
+              value4={e.value4}
+              value5={e.value5}
             />
           ))}
         </Box>
         {/* </Box> */}
       </Box>
 
-      {/* <form onSubmit={handleSubmit} action="">
-      <TextField margin="dense"
-        type="text"
-        value={value}
-        onChange={handleChange}
-      />
-      <Button onClick={handleclick}>Search</Button>
-    </form> */}
-
-      {/* <CheckboxComponent/> */}
     </>
   );
 };
