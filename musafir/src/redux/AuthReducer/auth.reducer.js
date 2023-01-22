@@ -1,7 +1,7 @@
 import { LOGIN, LOGOUT } from "./auth.types"
+  
 
-
-const initialstate={
+const initialstate=JSON.parse(localStorage.getItem("cache")) || {
     isLoggedIn:false,
     user:[]
 }
@@ -30,7 +30,10 @@ export const authReducer=(state=initialstate,{type,payload})=>{
             }
         }
         case LOGOUT:{
-            return initialstate
+            return {
+                isLoggedIn:false,
+                user:[]
+            }
         }
 
         default:{

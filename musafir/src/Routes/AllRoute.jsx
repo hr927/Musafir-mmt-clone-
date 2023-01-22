@@ -19,7 +19,11 @@ import Payment from "../pages/Payment";
 import Profile from "../pages/Profile";
 import Where from "../pages/Where";
 import PrivateRoute from "./PrivateRoute";
+
+import BookNow from "../pages/bookingPage/BookNow";
+
 import Admin from "../pages/Admin";
+
 
 const AllRoute = () => {
   return (
@@ -29,7 +33,7 @@ const AllRoute = () => {
       <Route path="/profile" element={<Profile></Profile>}></Route>
       <Route path="/payment" element={<Payment></Payment>}></Route>
       <Route path="/flight" element={<Flights />}></Route>
-      <Route path="/bookNow" element={<GetBookData />}></Route>
+      <Route path="/booking" element={<GetBookData />}></Route>
       <Route path="/where" element={<Where />}></Route>
       <Route path="/where/:id" element={<Destinations />}></Route>
       <Route path="/gift-cards" element={<Gifts />}></Route>
