@@ -12,13 +12,13 @@
 ![Musafir__3_-removebg-preview](https://user-images.githubusercontent.com/64404614/213977407-c807bd52-7911-4981-a997-fe54f4b6ed5d.png)
 
 <h1>ScreenShots</h1>
-<h1>ScreenShots</h1>
+
 ![Screenshot (784)](https://user-images.githubusercontent.com/107456969/213979612-a4195b5a-3ff8-4426-930b-8e9e0fbb56f6.png)
-<h1>Home Page</h1>
+
 ![Screenshot (785)](https://user-images.githubusercontent.com/107456969/213979622-8f03f899-2fa8-46ba-a44e-6f91b0bad386.png)
 ![Screenshot (786)](https://user-images.githubusercontent.com/107456969/213979630-001d70bf-f281-4493-9b05-db4a7f15320d.png)
-<h1>Flights Page</h1>
+
 ![Screenshot (787)](https://user-images.githubusercontent.com/107456969/213979645-2a09e685-d162-4418-8cf8-a84686e9313f.png)
-<h1>HotelPage</h1>
+
 ![Screenshot (789)](https://user-images.githubusercontent.com/107456969/213979651-a2a61268-cc4f-442a-8757-6ab6f564b97a.png)
 
