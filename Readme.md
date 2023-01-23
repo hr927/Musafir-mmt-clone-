@@ -6,6 +6,8 @@
 
 <h1>Features :</h1> <h2>Search and Book Hotels, Flights and recently we added Gift cards to our website</h2>
 
+<h1>ScreenShots</h1>
+
 ![Musafir__3_-removebg-preview](https://user-images.githubusercontent.com/64404614/213977407-c807bd52-7911-4981-a997-fe54f4b6ed5d.png)
 ![Screenshot (784)](https://user-images.githubusercontent.com/107456969/213979612-a4195b5a-3ff8-4426-930b-8e9e0fbb56f6.png)
 ![Screenshot (785)](https://user-images.githubusercontent.com/107456969/213979622-8f03f899-2fa8-46ba-a44e-6f91b0bad386.png)
