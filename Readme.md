@@ -2,7 +2,7 @@
 
 <h1>Musafir exists to empower the indian traveller with instant bookings and comprehensive choices</h1>
 
-<h1>Tech Stack :</h1> <h2>React, Material UI, Firebase,</h2>
+<h1>Tech Stack :</h1> <h2>React,Redux,Axios, Material UI, Firebase,</h2>
 
 <h1>Features :</h1> <h2>Search and Book Hotels, Flights and recently we added Gift cards to our website</h2>
 
