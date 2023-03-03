@@ -3,14 +3,19 @@ import {
   FormControlLabel,
   FormLabel,
   Grid,
+  InputLabel,
+  MenuItem,
   Radio,
   RadioGroup,
+  Select,
+  Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Box } from "@mui/system";
 import Loader from "../components/Loader";
+import styles from "./Gifts.module.css";
 
 const Gifts = () => {
   const navigate = useNavigate();
@@ -48,7 +53,7 @@ const Gifts = () => {
       ) : (
         <div style={{ display: "flex", width: "80%", margin: "auto" }}>
           <div style={{ flex: "1" }}>
-            <div>
+            <Box sx={{ display: ["none", "block", "block"] }}>
               <FormControl
                 sx={{
                   border: "1px solid #f2f2f2",
@@ -108,26 +113,42 @@ const Gifts = () => {
                   />
                 </RadioGroup>
               </FormControl>
-            </div>
+            </Box>
           </div>
 
-          <div
-            style={{
-              flex: "4",
-              margin: "auto",
-              padding: "20px",
-            }}
-          >
+          <div className={styles.container}>
             <h1>Gift Cards</h1>
             <img
               src="https://promos.makemytrip.com/appfest/2x/Gift-Card-top-banner.jpg"
               alt=""
               style={{ borderRadius: "25px", width: "90%" }}
             />
+            <Box sx={{ minWidth: 120, mt: "20px", display: ["block", "none"] }}>
+              <FormControl>
+                <InputLabel
+                  id="demo-simple-select-label"
+                  sx={{ fontSize: "20px" }}
+                >
+                  Filter
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={filter}
+                  label="Filter"
+                  onChange={handleFilter}
+                >
+                  <MenuItem value={"all"}>All</MenuItem>
+                  <MenuItem value={"ocassion"}>Ocassion</MenuItem>
+                  <MenuItem value={"festival"}>Festivals</MenuItem>
+                  <MenuItem value={"loved"}>Loved Ones</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
             <Grid
               container
               spacing={2}
-              columns={18}
+              columns={{ xs: 4, sm: 8, md: 18 }}
               sx={{
                 width: "90%",
                 margin: "auto",
@@ -138,7 +159,10 @@ const Gifts = () => {
             >
               {filteredData.map((el) => (
                 <Grid
-                  xs={5}
+                  item
+                  xs={4}
+                  sm={3}
+                  md={5}
                   key={el.id}
                   sx={{
                     padding: "20px",
@@ -164,7 +188,9 @@ const Gifts = () => {
                       }}
                       alt=""
                     />
-                    <h3>{el.title}</h3>
+                    <Typography sx={{ fontSize: ["15px", "15px", "20px"] }}>
+                      {el.title}
+                    </Typography>
                   </div>
                 </Grid>
               ))}

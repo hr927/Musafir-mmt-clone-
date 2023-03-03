@@ -67,7 +67,7 @@ const Where = () => {
         <Grid
           container
           spacing={2}
-          columns={18}
+          columns={{ xs: 4, sm: 8, md: 18 }}
           sx={{
             width: "90%",
             margin: "auto",
@@ -77,7 +77,10 @@ const Where = () => {
         >
           {destinations.map((el) => (
             <Grid
-              xs={5}
+              item
+              xs={4}
+              sm={3}
+              md={5}
               key={el.id}
               sx={{
                 padding: "20px",
@@ -99,6 +102,7 @@ const Where = () => {
                   style={{
                     display: "block",
                     alignSelf: "center",
+                    position: "relative",
                     width: "100%",
                     maxHeight: "228px",
                     objectFit: "cover",

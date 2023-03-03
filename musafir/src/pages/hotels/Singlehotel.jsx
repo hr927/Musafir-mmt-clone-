@@ -6,7 +6,15 @@ import WalletIcon from "@mui/icons-material/Wallet";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TextField, Button, Typography, Modal, Tab, Tabs } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Typography,
+  Modal,
+  Tab,
+  Tabs,
+  Grid,
+} from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Singlehotel = () => {
@@ -169,8 +177,10 @@ const Singlehotel = () => {
       </Box>
 
       <Box
-        style={{
+        sx={{
           display: "flex",
+          flexDirection: ["column", "column", "row"],
+
           width: "90%",
           margin: "auto",
           paddingTop: "100px",
@@ -183,7 +193,7 @@ const Singlehotel = () => {
               <div>
                 <img
                   style={{ borderRadius: "10px", padding: "5px" }}
-                  width={"600px"}
+                  width={"100%"}
                   height={"400px"}
                   src={hoteldata.image}
                   alt=""
@@ -195,7 +205,7 @@ const Singlehotel = () => {
               <div>
                 <img
                   style={{ borderRadius: "10px", padding: "5px" }}
-                  width={"200px"}
+                  width={"100%"}
                   height={"195px"}
                   src={hoteldata.imgThumb1}
                   alt=""
@@ -204,7 +214,7 @@ const Singlehotel = () => {
               <div>
                 <img
                   style={{ borderRadius: "10px", padding: "5px" }}
-                  width={"200px"}
+                  width={"100%"}
                   height={"195px"}
                   src={hoteldata.imgThumb2}
                   alt=""
@@ -214,7 +224,14 @@ const Singlehotel = () => {
           </div>
         </Box>
 
-        <Box style={{ marginTop: "", width: "40%" }}>
+        <Box
+          sx={{
+            marginTop: "",
+            width: "40%",
+            display: "flex",
+            flexDirection: ["row", "row", "column"],
+          }}
+        >
           <Box style={{ borderRadius: "10px", border: "1px solid grey" }}>
             <Box
               style={{
@@ -439,7 +456,7 @@ const Singlehotel = () => {
                           <TextField
                             label="CVV"
                             value={cvv}
-                            sx={{ width: "10%" }}
+                            sx={{ width: "20%" }}
                             onChange={(e) => setCvv(e.target.value)}
                             type="password"
                           />
@@ -739,8 +756,8 @@ const Singlehotel = () => {
       </Box>
 
       <Box
-        style={{
-          display: "flex",
+        sx={{
+          display: ["none", "none", "flex"],
           justifyContent: "space-around",
           width: "80%",
           margin: "auto",
@@ -929,221 +946,238 @@ const Singlehotel = () => {
           Free Cancel lation
         </label>
 
-        <Box style={{ display: "flex", justifyContent: "space-around" }}>
-          <Box
-            style={{
-              border: "1px solid grey",
-              width: "28%",
-              borderRadius: "10px",
-              padding: "5px",
-              margin: "10px",
-            }}
-          >
-            <img
-              style={{ borderRadius: "10px", padding: "5px" }}
-              width={"350px"}
-              height={"195px"}
-              src={hoteldata.image}
-              alt=""
-            />
-            <Typography
+        <Grid
+          container
+          spacing={2}
+          columns={{ xs: 4, sm: 8, md: 18 }}
+          sx={{
+            width: "90%",
+            margin: "auto",
+            gap: "25px",
+            justifyContent: "center",
+          }}
+        >
+          <Grid item xs={4} sm={3} md={5}>
+            {" "}
+            <Box
               style={{
-                fontFamily: "Lato",
-                fontSize: "22px",
-                fontWeight: 900,
-                lineHeight: "normal",
-                padding: "10px",
+                border: "1px solid grey",
+                width: "100%",
+                borderRadius: "10px",
+                padding: "5px",
+                margin: "10px",
               }}
             >
-              {" "}
-              {hoteldata.name}
-            </Typography>
-            <Typography
-              style={{
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                color: "rgb(74, 74, 74)",
-                padding: "10px",
-              }}
-            >
-              375 sq.ft
-            </Typography>
-            <Typography
-              style={{
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                color: "rgb(74, 74, 74)",
-                padding: "10px",
-              }}
-            >
-              {" "}
-              City View
-            </Typography>
-            <Typography
-              style={{
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                color: "rgb(74, 74, 74)",
-                padding: "10px",
-              }}
-            >
-              {" "}
-              King Bed
-            </Typography>
-            <Typography
-              style={{
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                color: "rgb(74, 74, 74)",
-                padding: "10px",
-              }}
-            >
-              {" "}
-              • Work Desk
-            </Typography>
-          </Box>
+              <img
+                style={{ borderRadius: "10px", padding: "5px" }}
+                width={"100%"}
+                height={"195px"}
+                src={hoteldata.image}
+                alt=""
+              />
+              <Typography
+                style={{
+                  fontFamily: "Lato",
+                  fontSize: "22px",
+                  fontWeight: 900,
+                  lineHeight: "normal",
+                  padding: "10px",
+                }}
+              >
+                {" "}
+                {hoteldata.name}
+              </Typography>
+              <Typography
+                style={{
+                  fontFamily: "Lato",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "normal",
+                  color: "rgb(74, 74, 74)",
+                  padding: "10px",
+                }}
+              >
+                375 sq.ft
+              </Typography>
+              <Typography
+                style={{
+                  fontFamily: "Lato",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "normal",
+                  color: "rgb(74, 74, 74)",
+                  padding: "10px",
+                }}
+              >
+                {" "}
+                City View
+              </Typography>
+              <Typography
+                style={{
+                  fontFamily: "Lato",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "normal",
+                  color: "rgb(74, 74, 74)",
+                  padding: "10px",
+                }}
+              >
+                {" "}
+                King Bed
+              </Typography>
+              <Typography
+                style={{
+                  fontFamily: "Lato",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "normal",
+                  color: "rgb(74, 74, 74)",
+                  padding: "10px",
+                }}
+              >
+                {" "}
+                • Work Desk
+              </Typography>
+            </Box>
+          </Grid>
 
-          <Box
-            style={{
-              border: "1px solid grey",
-              width: "28%",
-              borderRadius: "10px",
-              padding: "5px",
-              margin: "10px",
-            }}
-          >
-            <img
-              style={{ borderRadius: "10px", padding: "5px" }}
-              width={"350px"}
-              height={"195px"}
-              src={hoteldata.imgThumb1}
-              alt=""
-            />
+          <Grid item xs={4} sm={3} md={5}>
+            <Box
+              style={{
+                border: "1px solid grey",
+                width: "100%",
+                borderRadius: "10px",
+                padding: "5px",
+                margin: "10px",
+              }}
+            >
+              <img
+                style={{ borderRadius: "10px", padding: "5px" }}
+                width={"100%"}
+                height={"195px"}
+                src={hoteldata.imgThumb1}
+                alt=""
+              />
 
-            <Typography
-              style={{
-                padding: "5px",
-                fontFamily: "lato",
-                fontSize: "16px",
-                fontWeight: 900,
-                lineHeight: "20px",
-                color: "RGB(74, 74, 74)",
-              }}
-            >
-              Room With Free Cancellation
-            </Typography>
-            <Typography
-              style={{
-                padding: "5px",
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                color: "rgb(26, 121, 113)",
-              }}
-            >
-              {hoteldata.cancellation}
-            </Typography>
-            <Typography
-              style={{
-                padding: "5px",
-                fontFamily: "Lato",
-                fontSize: "14px",
-                fontWeight: 700,
-                lineHeight: "normal",
-                color: "rgb(26, 121, 113)",
-              }}
-            >
-              {hoteldata.moneyback}
-            </Typography>
-            <Button
-              style={{ backgroundColor: "rgb(11,88,180)", color: "white" }}
-            >
-              Login In Now To Book
-            </Button>
-          </Box>
+              <Typography
+                style={{
+                  padding: "5px",
+                  fontFamily: "lato",
+                  fontSize: "16px",
+                  fontWeight: 900,
+                  lineHeight: "20px",
+                  color: "RGB(74, 74, 74)",
+                }}
+              >
+                Room With Free Cancellation
+              </Typography>
+              <Typography
+                style={{
+                  padding: "5px",
+                  fontFamily: "Lato",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "normal",
+                  color: "rgb(26, 121, 113)",
+                }}
+              >
+                {hoteldata.cancellation}
+              </Typography>
+              <Typography
+                style={{
+                  padding: "5px",
+                  fontFamily: "Lato",
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  lineHeight: "normal",
+                  color: "rgb(26, 121, 113)",
+                }}
+              >
+                {hoteldata.moneyback}
+              </Typography>
+              <Button
+                style={{ backgroundColor: "rgb(11,88,180)", color: "white" }}
+              >
+                Login In Now To Book
+              </Button>
+            </Box>
+          </Grid>
 
-          <Box
-            style={{
-              border: "1px solid grey",
-              width: "28%",
-              borderRadius: "10px",
-              padding: "5px",
-              margin: "10px",
-            }}
-          >
-            <Typography
+          <Grid item xs={4} sm={3} md={5}>
+            <Box
               style={{
-                backgroundColor: "rgb(205,252,232)",
-                fontSize: "16px",
-                color: "grey",
-                padding: "10px",
-              }}
-            >
-              {hoteldata.offer}
-            </Typography>
-            <Typography
-              style={{ color: "grey", fontSize: "16px", padding: "5px" }}
-            >
-              {hoteldata.pernight}
-            </Typography>
-            <Typography
-              style={{
-                textDecoration: "line-through",
-                color: " rgb(155, 155, 155)",
+                border: "1px solid grey",
+                width: "100%",
+                borderRadius: "10px",
                 padding: "5px",
+                margin: "10px",
               }}
             >
-              ₹{hoteldata.dscprice}
-            </Typography>
-            <Typography
-              style={{
-                font: "26px",
-                fontWeight: "700",
-                lineHeight: "20px",
-                padding: "5px",
-              }}
-            >
-              ₹{hoteldata.price}
-            </Typography>
-            <Typography
-              style={{
-                font: "20px",
-                color: " rgb(155, 155, 155)",
-                padding: "5px",
-              }}
-            >
-              {hoteldata.tax}
-            </Typography>
-            <Button
-              style={{
-                backgroundColor: "rgb(11,88,180)",
-                color: "white",
-                fontFamily: "Lato",
-                fontSize: "16px",
-                fontWeight: 900,
-                lineHeight: "normal",
-                color: "RGB(255, 255, 255)",
-                padding: "5px",
-              }}
-            >
-              {" "}
-              Book Now
-            </Button>
+              <Typography
+                style={{
+                  backgroundColor: "rgb(205,252,232)",
+                  fontSize: "16px",
+                  color: "grey",
+                  padding: "10px",
+                }}
+              >
+                {hoteldata.offer}
+              </Typography>
+              <Typography
+                style={{ color: "grey", fontSize: "16px", padding: "5px" }}
+              >
+                {hoteldata.pernight}
+              </Typography>
+              <Typography
+                style={{
+                  textDecoration: "line-through",
+                  color: " rgb(155, 155, 155)",
+                  padding: "5px",
+                }}
+              >
+                ₹{hoteldata.dscprice}
+              </Typography>
+              <Typography
+                style={{
+                  font: "26px",
+                  fontWeight: "700",
+                  lineHeight: "20px",
+                  padding: "5px",
+                }}
+              >
+                ₹{hoteldata.price}
+              </Typography>
+              <Typography
+                style={{
+                  font: "20px",
+                  color: " rgb(155, 155, 155)",
+                  padding: "5px",
+                }}
+              >
+                {hoteldata.tax}
+              </Typography>
+              <Button
+                style={{
+                  backgroundColor: "rgb(11,88,180)",
+                  color: "white",
+                  fontFamily: "Lato",
+                  fontSize: "16px",
+                  fontWeight: 900,
+                  lineHeight: "normal",
+                  color: "RGB(255, 255, 255)",
+                  padding: "5px",
+                }}
+              >
+                {" "}
+                Book Now
+              </Button>
 
-            <Typography style={{ fontSize: "20px", color: "grey" }}>
-              Saving ₹{200}
-            </Typography>
-          </Box>
-        </Box>
+              <Typography style={{ fontSize: "20px", color: "grey" }}>
+                Saving ₹{200}
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
 
       <Box style={{ width: "90%", margin: "auto" }}>

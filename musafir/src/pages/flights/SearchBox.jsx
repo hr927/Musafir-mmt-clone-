@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { border } from "@mui/system";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Box } from "@mui/material";
 
 const SearchBox = () => {
   const [from, setFrom] = React.useState("");
@@ -191,9 +192,9 @@ const SearchBox = () => {
             </div>
 
             {/* departure and return date start */}
-            <div className={styles.DepRetContainer}>
-              {/* departure date starts */}
-              <div style={{ width: "100%" }}>
+            {/* <div className={styles.DepRetContainer}> */}
+            {/* departure date starts */}
+            {/* <div style={{ width: "100%" }}>
                 <FormControl sx={{ width: "100%" }}>
                   <LocalizationProvider
                     sx={{ width: "100%" }}
@@ -209,9 +210,9 @@ const SearchBox = () => {
                     />
                   </LocalizationProvider>
                 </FormControl>
-              </div>
-              {/* departure date end */}
-            </div>
+              </div> */}
+            {/* departure date end */}
+            {/* </div> */}
             {/* departure and return date end */}
 
             {/* number of travellers start */}
@@ -408,58 +409,91 @@ const SearchBox = () => {
           </div>
         </div>
         <div className={styles.right}>
-          {newData.map((e, index) => (
-            <div key={index} className={styles.flightCard}>
-              <div className={styles.flightName}>
-                <div className={styles.logo}>
-                  <img
-                    src={
-                      e.airline === "IndiGo"
-                        ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=7"
-                        : e.airline === "AirIndia"
-                        ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=7"
-                        : e.airline === "Vistara"
-                        ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/UK.png?v=7"
-                        : e.airline === "SpiceJet"
-                        ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=7"
-                        : e.airline === "GoAir"
-                        ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7"
-                        : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7"
-                    }
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <div>{e.airline}</div>
-                  <div>{e.number}</div>
-                </div>
-              </div>
-              <div className={styles.flighttime}>
-                <div>{e.departure}</div>
-                <br />
-                <div>{e.from}</div>
-              </div>
-              <div className={styles.totalTime}>
-                <div>{e.totalTime}</div>
-                <hr />
-                <div>non-stop</div>
-              </div>
-              <div className={styles.flighttime}>
-                <div>{e.arrival}</div>
-                <br />
-                <div>{e.to}</div>
-              </div>
-              <div className={styles.price}>Rs.{e.price}</div>
-              <button
-                class={styles.bookNow}
-                onClick={() => {
-                  localStorage.setItem("bookData", JSON.stringify(e));
-                }}
+          <Box
+            sx={{
+              minWidth: 120,
+              mt: "20px",
+              display: ["block"],
+              alignSelf: "end",
+            }}
+          >
+            <FormControl>
+              <InputLabel
+                id="demo-simple-select-label"
+                sx={{ fontSize: "20px" }}
               >
-                <Link to="/booking">BOOK NOW</Link>
-              </button>
-            </div>
-          ))}
+                Sort
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Filter"
+              >
+                <MenuItem onClick={handleSortHL} value={"hl"}>
+                  High to Low
+                </MenuItem>
+                <MenuItem onClick={handleSortLH} value={"lh"}>
+                  Low to High
+                </MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+          {newData && newData.length > 0 ? (
+            newData.map((e, index) => (
+              <div key={index} className={styles.flightCard}>
+                <div className={styles.flightName}>
+                  <div className={styles.logo}>
+                    <img
+                      src={
+                        e.airline === "IndiGo"
+                          ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=7"
+                          : e.airline === "AirIndia"
+                          ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=7"
+                          : e.airline === "Vistara"
+                          ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/UK.png?v=7"
+                          : e.airline === "SpiceJet"
+                          ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=7"
+                          : e.airline === "GoAir"
+                          ? "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7"
+                          : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7"
+                      }
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <div>{e.airline}</div>
+                    <div>{e.number}</div>
+                  </div>
+                </div>
+                <div className={styles.flighttime}>
+                  <div>{e.departure}</div>
+                  <br />
+                  <div>{e.from}</div>
+                </div>
+                <div className={styles.totalTime}>
+                  <div>{e.totalTime}</div>
+                  <hr />
+                  <div>non-stop</div>
+                </div>
+                <div className={styles.flighttime}>
+                  <div>{e.arrival}</div>
+                  <br />
+                  <div>{e.to}</div>
+                </div>
+                <div className={styles.price}>Rs.{e.price}</div>
+                <button
+                  class={styles.bookNow}
+                  onClick={() => {
+                    localStorage.setItem("bookData", JSON.stringify(e));
+                  }}
+                >
+                  <Link to="/booking">BOOK NOW</Link>
+                </button>
+              </div>
+            ))
+          ) : (
+            <h1>No Flights Found</h1>
+          )}
         </div>
       </div>
     </>

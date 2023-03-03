@@ -54,7 +54,7 @@ const Destinations = () => {
         }}
       >
         <h1>{heading}</h1>
-        <h3 style={{ color: "white" }}>{subhead}</h3>
+        <h4 style={{ color: "white" }}>{subhead}</h4>
       </div>
       <div
         style={{
@@ -65,7 +65,7 @@ const Destinations = () => {
         <Grid
           container
           spacing={2}
-          columns={18}
+          columns={{ xs: 4, sm: 8, md: 18 }}
           sx={{
             width: "90%",
             margin: "auto",
@@ -75,7 +75,10 @@ const Destinations = () => {
         >
           {places.map((el) => (
             <Grid
-              xs={5}
+              item
+              xs={4}
+              sm={3}
+              md={5}
               key={el.id}
               sx={{
                 padding: "20px",
