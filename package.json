@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/pickers": "^3.3.10"
-  }
-}
