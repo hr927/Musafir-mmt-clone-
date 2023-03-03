@@ -8,18 +8,14 @@ const ComponentB = ({ email, password, setpassword, setflip }) => {
   const secret = email[0] + email[1] + email[2] + "*****@gmail.com";
   const [disablebtn, setDisablebtn] = React.useState(true);
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   function handleSubmit(event) {
-    if(email.includes("@musafir.com") && password==="musafir"){
-        navigate("/admin")
-    }else{
+    if (email.includes("@musafir.com") && password === "musafir") {
+      navigate("/admin");
+    } else {
       dispatch(manualSignin(email, password));
     }
-
-   
-   
   }
-  console.log(email,password)
   return (
     <>
       <Button onClick={() => setflip(false)}>BACK</Button>

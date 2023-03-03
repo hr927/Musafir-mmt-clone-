@@ -19,22 +19,21 @@ const cities = [
   "Ahmedabad",
   "Pune",
   "Surat",
-  "Jaipur"
-]
+  "Jaipur",
+];
 
 const Hotel = () => {
   const [value, setValue] = useState(cities[0]);
-  const [Data, setData] = useState([])
-  const [reset, setreset] = useState(true)
+  const [Data, setData] = useState([]);
+  const [reset, setreset] = useState(true);
   // let input = value;
-  console.log(value);
 
   React.useEffect(() => {
     let mumbaiData = Object.keys(hotels)
       .filter((key) => key === value)
       .map((key) => hotels[key]);
-    setData(mumbaiData[0])
-  }, [reset,value])
+    setData(mumbaiData[0]);
+  }, [reset, value]);
 
   function Filter(value1, value2) {
     let temp = Object.keys(hotels)
@@ -42,13 +41,12 @@ const Hotel = () => {
       .map((key) => hotels[key]);
 
     let filteredData = temp[0].filter((el) => {
-      let x = +el.discprice.split(",").map(String).join("")
+      let x = +el.discprice.split(",").map(String).join("");
 
-      return x > value1 && x !== "" && x < value2
-    })
-    setData(filteredData)
+      return x > value1 && x !== "" && x < value2;
+    });
+    setData(filteredData);
   }
-
 
   return (
     <>
@@ -61,25 +59,30 @@ const Hotel = () => {
           top: "105px",
           display: "flex",
           position: "fixed",
-          padding:"10px"
+          padding: "10px",
         }}
       >
-        <FormControl sx={{ color: "white", fontSize: "10px",padding:"10px" }}>
-
+        <FormControl sx={{ color: "white", fontSize: "10px", padding: "10px" }}>
           <Autocomplete
             disablePortal
             id="combo-box-demo"
             options={cities}
             sx={{ width: 300 }}
             value={value}
-            onChange={(event, newValue) => { setValue( newValue) }}
-            renderInput={(params) => <TextField style={{ color: "red" }} {...params} label="city are or property" />}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            renderInput={(params) => (
+              <TextField
+                style={{ color: "red" }}
+                {...params}
+                label="city are or property"
+              />
+            )}
           />
         </FormControl>
         <Modals Filter={Filter} />
       </Box>
-
-     
 
       <Box
         sx={{
@@ -88,7 +91,7 @@ const Hotel = () => {
           width: "90%",
           gap: "10px",
           margin: "auto",
-          marginTop:"200px"
+          marginTop: "200px",
         }}
       >
         <Box
@@ -98,7 +101,6 @@ const Hotel = () => {
             display: "flex",
             flexDirection: "column",
             alignContent: "flex-start",
-            
           }}
         >
           <Typography
@@ -223,9 +225,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input onChange={(e) => {
-              e.target.checked ? Filter(0, 2000) : setreset(!reset)
-            }} type="checkbox" /> ₹ 0 - ₹ 2000 (62)
+            <input
+              onChange={(e) => {
+                e.target.checked ? Filter(0, 2000) : setreset(!reset);
+              }}
+              type="checkbox"
+            />{" "}
+            ₹ 0 - ₹ 2000 (62)
           </label>
           <label
             style={{
@@ -237,9 +243,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e) => {
-              e.target.checked ? Filter(2000, 3500) : setreset(!reset)
-            }} /> ₹ 2000 - ₹ 3500 (57)
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                e.target.checked ? Filter(2000, 3500) : setreset(!reset);
+              }}
+            />{" "}
+            ₹ 2000 - ₹ 3500 (57)
           </label>
           <label
             style={{
@@ -251,9 +261,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e) => {
-              e.target.checked ? Filter(3500, 7500) : setreset(!reset)
-            }} /> ₹ 3500 - ₹ 7500 (42)
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                e.target.checked ? Filter(3500, 7500) : setreset(!reset);
+              }}
+            />{" "}
+            ₹ 3500 - ₹ 7500 (42)
           </label>
           <label
             style={{
@@ -265,9 +279,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e) => {
-              e.target.checked ? Filter(7500, 11500) : setreset(!reset)
-            }} /> ₹ 7500 - ₹ 11500 (2)
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                e.target.checked ? Filter(7500, 11500) : setreset(!reset);
+              }}
+            />{" "}
+            ₹ 7500 - ₹ 11500 (2)
           </label>
           <label
             style={{
@@ -279,9 +297,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e) => {
-              e.target.checked ? Filter(11500, 15000) : setreset(!reset)
-            }} /> ₹ 11500 - ₹ 15000 (0)
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                e.target.checked ? Filter(11500, 15000) : setreset(!reset);
+              }}
+            />{" "}
+            ₹ 11500 - ₹ 15000 (0)
           </label>
           <label
             style={{
@@ -293,9 +315,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e) => {
-              e.target.checked ? Filter(15000, 30000) : setreset(!reset)
-            }} /> ₹ 15000 - ₹ 30000 (1)
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                e.target.checked ? Filter(15000, 30000) : setreset(!reset);
+              }}
+            />{" "}
+            ₹ 15000 - ₹ 30000 (1)
           </label>
           <label
             style={{
@@ -307,9 +333,13 @@ const Hotel = () => {
               color: "rgb(74, 74, 74)",
             }}
           >
-            <input type="checkbox" onChange={(e) => {
-              e.target.checked ? Filter(30000, 70000) : setreset(!reset)
-            }} /> ₹ 30000+ (0)
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                e.target.checked ? Filter(30000, 70000) : setreset(!reset);
+              }}
+            />{" "}
+            ₹ 30000+ (0)
           </label>
 
           <Typography
@@ -840,7 +870,6 @@ const Hotel = () => {
             width: "90%",
           }}
         >
-
           {Data.map((e) => (
             <Citycard
               key={e.id}
@@ -874,7 +903,6 @@ const Hotel = () => {
         </Box>
         {/* </Box> */}
       </Box>
-
     </>
   );
 };

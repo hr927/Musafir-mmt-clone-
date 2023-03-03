@@ -3,13 +3,20 @@ import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { NavigateBefore, NavigateNext } from "@mui/icons-material";
 import "../CSS/Carousal.css";
-import { slider0, slider1, slider2,slider3,slider4,slider5,slider6 } from "../CarouselData";
+import {
+  slider0,
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+  slider6,
+} from "../CarouselData";
 import { ListenerContext } from "../Contexts/ListenerProvider";
 
 export const Carousal = () => {
   const [offers, setOffers] = useState(0);
   const { width } = useContext(ListenerContext);
-  console.log(width);
   const properties = {
     duration: 20000,
     transitionDuration: 500,
@@ -137,9 +144,265 @@ export const Carousal = () => {
               );
             })}
           </Slide>
-        ): offers === 1 ? (
+        ) : offers === 1 ? (
+          <Slide {...properties}>
+            {slider1.map((item) => {
+              return (
+                <div key={item.id}>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.first.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.first.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.first.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.first.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.second.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.second.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.second.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.second.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </Slide>
+        ) : offers === 2 ? (
+          <Slide {...properties}>
+            {slider2.map((item) => {
+              return (
+                <div key={item.id}>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.first.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.first.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.first.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.first.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.second.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.second.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.second.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.second.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </Slide>
+        ) : offers === 3 ? (
+          <Slide {...properties}>
+            {slider3.map((item) => {
+              return (
+                <div key={item.id}>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.first.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.first.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.first.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.first.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.second.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.second.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.second.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.second.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </Slide>
+        ) : offers === 4 ? (
+          <Slide {...properties}>
+            {slider4.map((item) => {
+              return (
+                <div key={item.id}>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.first.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.first.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.first.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.first.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.second.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.second.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.second.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.second.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </Slide>
+        ) : offers === 5 ? (
+          <Slide {...properties}>
+            {slider5.map((item) => {
+              return (
+                <div key={item.id}>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.first.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.first.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.first.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.first.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="each-slide">
+                    <div className="ind-slide">
+                      <div className="imageSection">
+                        <img src={item.second.thumbnail_image} alt="" />
+                        <p>T&C's Apply</p>
+                      </div>
+                      <div className="contentSection">
+                        <div>
+                          <p className="offerCardTitle">{item.second.title}</p>
+                          <p className="offerCardSubTitle">
+                            {item.second.subTitle}
+                          </p>
+                          <div className="divider" />
+                          <p className="offerCardOffers">{item.second.offer}</p>
+                        </div>
+                        <div className="knowMore">
+                          <p>KNOW MORE</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </Slide>
+        ) : (
+          offers === 6 && (
             <Slide {...properties}>
-              {slider1.map((item) => {
+              {slider6.map((item) => {
                 return (
                   <div key={item.id}>
                     <div className="each-slide">
@@ -155,7 +418,9 @@ export const Carousal = () => {
                               {item.first.subTitle}
                             </p>
                             <div className="divider" />
-                            <p className="offerCardOffers">{item.first.offer}</p>
+                            <p className="offerCardOffers">
+                              {item.first.offer}
+                            </p>
                           </div>
                           <div className="knowMore">
                             <p>KNOW MORE</p>
@@ -171,12 +436,16 @@ export const Carousal = () => {
                         </div>
                         <div className="contentSection">
                           <div>
-                            <p className="offerCardTitle">{item.second.title}</p>
+                            <p className="offerCardTitle">
+                              {item.second.title}
+                            </p>
                             <p className="offerCardSubTitle">
                               {item.second.subTitle}
                             </p>
                             <div className="divider" />
-                            <p className="offerCardOffers">{item.second.offer}</p>
+                            <p className="offerCardOffers">
+                              {item.second.offer}
+                            </p>
                           </div>
                           <div className="knowMore">
                             <p>KNOW MORE</p>
@@ -188,271 +457,8 @@ export const Carousal = () => {
                 );
               })}
             </Slide>
-          ): offers === 2 ? (
-            <Slide {...properties}>
-              {slider2.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.first.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.first.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.first.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.first.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.second.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.second.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.second.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.second.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slide>
-          ): offers === 3 ? (
-            <Slide {...properties}>
-              {slider3.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.first.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.first.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.first.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.first.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.second.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.second.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.second.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.second.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slide>
-          ): offers === 4 ? (
-            <Slide {...properties}>
-              {slider4.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.first.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.first.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.first.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.first.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.second.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.second.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.second.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.second.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slide>
-          ): offers === 5 ? (
-            <Slide {...properties}>
-              {slider5.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.first.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.first.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.first.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.first.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="each-slide">
-                      <div className="ind-slide">
-                        <div className="imageSection">
-                          <img src={item.second.thumbnail_image} alt="" />
-                          <p>T&C's Apply</p>
-                        </div>
-                        <div className="contentSection">
-                          <div>
-                            <p className="offerCardTitle">{item.second.title}</p>
-                            <p className="offerCardSubTitle">
-                              {item.second.subTitle}
-                            </p>
-                            <div className="divider" />
-                            <p className="offerCardOffers">{item.second.offer}</p>
-                          </div>
-                          <div className="knowMore">
-                            <p>KNOW MORE</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slide>
-          ): (
-            offers === 6 && (
-              <Slide {...properties}>
-                {slider6.map((item) => {
-                  return (
-                    <div key={item.id}>
-                      <div className="each-slide">
-                        <div className="ind-slide">
-                          <div className="imageSection">
-                            <img src={item.first.thumbnail_image} alt="" />
-                            <p>T&C's Apply</p>
-                          </div>
-                          <div className="contentSection">
-                            <div>
-                              <p className="offerCardTitle">{item.first.title}</p>
-                              <p className="offerCardSubTitle">
-                                {item.first.subTitle}
-                              </p>
-                              <div className="divider" />
-                              <p className="offerCardOffers">
-                                {item.first.offer}
-                              </p>
-                            </div>
-                            <div className="knowMore">
-                              <p>KNOW MORE</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="each-slide">
-                        <div className="ind-slide">
-                          <div className="imageSection">
-                            <img src={item.second.thumbnail_image} alt="" />
-                            <p>T&C's Apply</p>
-                          </div>
-                          <div className="contentSection">
-                            <div>
-                              <p className="offerCardTitle">
-                                {item.second.title}
-                              </p>
-                              <p className="offerCardSubTitle">
-                                {item.second.subTitle}
-                              </p>
-                              <div className="divider" />
-                              <p className="offerCardOffers">
-                                {item.second.offer}
-                              </p>
-                            </div>
-                            <div className="knowMore">
-                              <p>KNOW MORE</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </Slide>
-            )
           )
-        }
+        )}
       </div>
     </div>
   );

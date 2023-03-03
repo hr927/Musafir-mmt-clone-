@@ -48,7 +48,6 @@ const SearchBox = () => {
 
     setNewData(c);
     // localStorage.setItem("dataKey", JSON.stringify(c));
-    console.log(c);
   };
 
   const onClickNoOfPass = (val) => {
@@ -62,7 +61,6 @@ const SearchBox = () => {
   const [value, setValue] = useState([]);
   const [value1, setValue1] = useState([]);
   let dataLS = JSON.parse(localStorage.getItem("dataKey"));
-  console.log("dataLS", dataLS);
 
   // setNewData(dataLS);
 
@@ -76,8 +74,6 @@ const SearchBox = () => {
       .then((response) => setData(response.data))
       .catch((err) => console.log(err));
   };
-
-  console.log("data", data);
 
   const handleSortLH = async (e) => {
     return await axios
@@ -94,7 +90,6 @@ const SearchBox = () => {
     });
 
     setNewData(d);
-    console.log("d", d);
   };
 
   const handleSortHL = async (e) => {
@@ -112,7 +107,6 @@ const SearchBox = () => {
     });
 
     setNewData(f);
-    console.log("f", f);
   };
   return (
     <>

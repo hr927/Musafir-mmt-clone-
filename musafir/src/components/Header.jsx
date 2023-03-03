@@ -166,6 +166,8 @@ export default function Header() {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          variant="scrollable"
+          scrollButtons="auto"
         >
           <Tab icon={<FlightIcon />} label={"FLights"} {...a11yProps(0)} />
           <Tab icon={<HotelIcon />} label="Hotels" {...a11yProps(1)} />
@@ -197,7 +199,9 @@ export default function Header() {
       </Box>
       <TabPanel value={value} index={0}>
         <Box>
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box
+            sx={{ display: ["none", "flex"], justifyContent: "space-between" }}
+          >
             <FormControl>
               <RadioGroup
                 aria-labelledby="demo-controlled-radio-buttons-group"
@@ -225,7 +229,11 @@ export default function Header() {
             </FormControl>
             <p>Book International and Deomestic Flights</p>
           </Box>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -234,7 +242,7 @@ export default function Header() {
               onChange={(event, newValue) => {
                 setFrom(newValue);
               }}
-              sx={{ width: 300 }}
+              sx={{ width: [200, 300] }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
             <Autocomplete
@@ -245,7 +253,7 @@ export default function Header() {
               onChange={(event, newValue) => {
                 setTo(newValue);
               }}
-              sx={{ width: 300 }}
+              sx={{ width: [200, 300] }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -338,7 +346,13 @@ export default function Header() {
               </Box>
             </Modal>
           </Stack>
-          <Box sx={{ display: "flex", alignItems: "center", padding: "10px" }}>
+          <Box
+            sx={{
+              display: ["none", "flex"],
+              alignItems: "center",
+              padding: "10px",
+            }}
+          >
             <h4 style={{ display: "inline", marginRight: "12px" }}>
               Select a Fair Type:
             </h4>
@@ -466,10 +480,9 @@ export default function Header() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Box>
-          <p style={{ textAlign: "center", marginBottom: "5px" }}>
-            Book International and Deomestic Flights
-          </p>
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box
+            sx={{ display: ["none", "flex"], justifyContent: "space-between" }}
+          >
             <FormControl>
               <RadioGroup
                 aria-labelledby="demo-controlled-radio-buttons-group"
@@ -491,7 +504,11 @@ export default function Header() {
               </RadioGroup>
             </FormControl>
           </Box>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -500,7 +517,7 @@ export default function Header() {
               onChange={(event, newValue) => {
                 setFrom(newValue);
               }}
-              sx={{ width: 300 }}
+              sx={{ width: [200, 300] }}
               renderInput={(params) => (
                 <TextField {...params} label="CITY,PROPERTY NAME OR LOCATION" />
               )}
@@ -553,6 +570,7 @@ export default function Header() {
                 value={roomPrice}
                 label="Price per Night"
                 onChange={handleRoomPrice}
+                sx={{ width: [200, 300] }}
               >
                 <MenuItem value={"0-1500"}>0-1500</MenuItem>
                 <MenuItem value={"1500-2500"}>1500-2500</MenuItem>
@@ -631,7 +649,11 @@ export default function Header() {
           <p style={{ textAlign: "center", marginBottom: "5px" }}>
             Book your ideal Homestay - Villas, Apartments & more.
           </p>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -733,7 +755,13 @@ export default function Header() {
               </Box>
             </Modal>
           </Stack>
-          <Box sx={{ display: "flex", alignItems: "center", padding: "10px" }}>
+          <Box
+            sx={{
+              display: ["none", "flex"],
+              alignItems: "center",
+              padding: "10px",
+            }}
+          >
             <h4 style={{ display: "inline", marginRight: "12px" }}>Filters:</h4>
             <FormGroup row>
               <FormControlLabel
@@ -808,7 +836,11 @@ export default function Header() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Box>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -932,7 +964,11 @@ export default function Header() {
           <p style={{ textAlign: "center", marginBottom: "10px" }}>
             IRCTC Authorized e-ticketing
           </p>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -1018,7 +1054,11 @@ export default function Header() {
             Bus Ticket Booking
           </p>
 
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -1027,14 +1067,14 @@ export default function Header() {
               onChange={(event, newValue) => {
                 setFrom(newValue);
               }}
-              sx={{ width: 500 }}
+              sx={{ width: [300, 500] }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
             <Autocomplete
               disablePortal
               id="combo-box-demo"
               options={cities}
-              sx={{ width: 500 }}
+              sx={{ width: [300, 500] }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -1093,7 +1133,11 @@ export default function Header() {
               </RadioGroup>
             </FormControl>
           </Box>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
@@ -1445,19 +1489,23 @@ export default function Header() {
               </RadioGroup>
             </FormControl>
           </Box>
-          <Stack direction="row" spacing={2}>
+          <Stack
+            direction={{ sm: "column", lg: "row" }}
+            spacing={{ xs: 2, sm: 2, md: 2 }}
+            padding={{ xs: 2, sm: 2, md: 2 }}
+          >
             <Autocomplete
               disablePortal
               id="combo-box-demo"
               options={cities}
-              sx={{ width: 300 }}
+              sx={{ width: [200, 300] }}
               renderInput={(params) => <TextField {...params} label="From" />}
             />
             <Autocomplete
               disablePortal
               id="combo-box-demo"
               options={cities}
-              sx={{ width: 300 }}
+              sx={{ width: [200, 300] }}
               renderInput={(params) => <TextField {...params} label="To" />}
             />
             <LocalizationProvider dateAdapter={AdapterDayjs}>
