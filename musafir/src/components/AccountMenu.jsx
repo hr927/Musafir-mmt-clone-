@@ -21,7 +21,6 @@ export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const userData = useSelector((store) => store.auth.user[0]);
 
-  console.log(userData);
   const profilePic = userData?.photoURL;
   const displayName = userData.displayName;
   const userEmail = userData.email;
@@ -32,7 +31,7 @@ export default function AccountMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
- const navigate=useNavigate()
+  const navigate = useNavigate();
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -98,8 +97,11 @@ export default function AccountMenu() {
         </Typography>
         <MenuItem>
           <Avatar src={profilePic} />
-          <Container onClick={()=>navigate("/profile")} sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography  sx={{ marginLeft: "-10px" }}>My Profile</Typography>
+          <Container
+            onClick={() => navigate("/profile")}
+            sx={{ display: "flex", flexDirection: "column" }}
+          >
+            <Typography sx={{ marginLeft: "-10px" }}>My Profile</Typography>
 
             <Typography
               varient="p"

@@ -24,9 +24,7 @@ export default function Login() {
     auth
       .signInWithPopup(googleProvider)
       .then((res) => {
-        console.log(res.user);
         const { displayName, email } = res.user;
-        console.log(displayName, email);
         dispatch(loginAction(res.user.providerData));
       })
       .catch((error) => {
@@ -34,9 +32,5 @@ export default function Login() {
       });
   };
 
-  return (
-   
-      <LogginButton SignInWithGoogle={SignInWithGoogle}></LogginButton>
-   
-  );
+  return <LogginButton SignInWithGoogle={SignInWithGoogle}></LogginButton>;
 }

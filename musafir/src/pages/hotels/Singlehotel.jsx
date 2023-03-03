@@ -11,7 +11,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const Singlehotel = () => {
   const hoteldata = JSON.parse(localStorage.getItem("hoteldetails")) || [];
-  console.log(hoteldata);
   const { id } = useParams();
   const [value, setValue] = React.useState(0);
   const [amount, setAmount] = useState(1000);
