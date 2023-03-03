@@ -1,0 +1,15 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: "10px";
+}
+
+/* Styles for mobile screens */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .container img {
+    width: 100%;
+  }
+}

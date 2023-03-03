@@ -24,7 +24,7 @@ import BookNow from "../pages/bookingPage/BookNow";
 
 import Admin from "../pages/Admin";
 import Singlehotel from "../pages/hotels/Singlehotel";
-
+import NotFound from "../pages/NotFound";
 
 const AllRoute = () => {
   return (
@@ -41,6 +41,7 @@ const AllRoute = () => {
       <Route path="/gift-cards/:id" element={<BuyGifts />}></Route>
       <Route path="/admin" element={<Admin />}></Route>
       <Route path="/singlehotel" element={<Singlehotel />}></Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

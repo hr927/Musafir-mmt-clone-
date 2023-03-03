@@ -165,7 +165,7 @@ function BuyGifts() {
     return <Loader />;
   }
   return (
-    <div
+    <Box
       style={{
         display: "flex",
         flexDirection: "column",
@@ -175,32 +175,42 @@ function BuyGifts() {
         paddingTop: "100px",
       }}
     >
-      <div style={{ display: "flex", width: "90%", margin: "auto" }}>
-        <div
-          style={{
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: ["column", "column", "row"],
+          width: "90%",
+          margin: "auto",
+        }}
+      >
+        <Box
+          sx={{
             display: "flex",
-            width: "70%",
+            flexDirection: ["column", "column", "row"],
+            width: ["100%", "70%"],
             margin: "auto",
             padding: "20px",
             border: "2px solid #f2f2f2",
           }}
         >
-          <div
+          <Box
             style={{
               display: "flex",
               flexDirection: "column",
-              width: "70%",
+              width: ["100%", "70%"],
             }}
           >
-            <h1>{card.title}</h1>
+            <Typography sx={{ fontSize: ["15px", "20px"] }}>
+              {card.title}
+            </Typography>
             <img src={card.image} alt="" style={{ width: "80%" }} />
-          </div>
-          <div
+          </Box>
+          <Box
             style={{
               display: "flex",
               flexDirection: "column",
               margin: "auto",
-              width: "30%",
+              width: ["100%", "30%"],
               rowGap: "20px",
             }}
           >
@@ -222,13 +232,13 @@ function BuyGifts() {
               onChange={handleAmountChange}
               placeholder="Enter Amount"
             />
-          </div>
-        </div>
-        <div
+          </Box>
+        </Box>
+        <Box
           style={{
             display: "flex",
             flexDirection: "column",
-            width: "25%",
+            width: ["100%", "25%"],
             margin: "auto",
             marginLeft: "30px",
             padding: "20px",
@@ -429,8 +439,8 @@ function BuyGifts() {
           >
             Total: ₹{total}
           </Typography>
-        </div>
-      </div>
+        </Box>
+      </Box>
       <div
         style={{
           display: "flex",
@@ -458,8 +468,8 @@ function BuyGifts() {
             <h2>Whom do you want to send this gift card to?</h2>
           )}
           {sendVia === "whatsapp" ? (
-            <div
-              style={{
+            <Box
+              sx={{
                 display: "flex",
                 flexDirection: "column",
                 rowGap: "10px",
@@ -506,15 +516,16 @@ function BuyGifts() {
                 onChange={(e) => setSenderMail(e.target.value)}
                 variant="outlined"
               />
-            </div>
+            </Box>
           ) : (
-            <div
-              style={{
+            <Box
+              sx={{
                 display: "flex",
+                flexDirection: ["column", "column", "row"],
                 rowGap: "10px",
               }}
             >
-              <div
+              <Box
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -569,8 +580,8 @@ function BuyGifts() {
                   label="Compose a Message"
                   variant="outlined"
                 />
-              </div>
-              <div
+              </Box>
+              <Box
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -612,8 +623,8 @@ function BuyGifts() {
                   label="Sender's Email"
                   variant="outlined"
                 />
-              </div>
-            </div>
+              </Box>
+            </Box>
           )}
         </div>
       </div>
@@ -1090,7 +1101,7 @@ function BuyGifts() {
           </AccordionDetails>
         </Accordion>
       </div>
-    </div>
+    </Box>
   );
 }
 

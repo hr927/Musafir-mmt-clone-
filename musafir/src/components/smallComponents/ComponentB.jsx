@@ -36,6 +36,7 @@ const ComponentB = ({ email, password, setpassword, setflip }) => {
         placeholder="Enter Email"
         id="outlined-basic"
         label="Password"
+        type="password"
         variant="outlined"
       />
       <Button

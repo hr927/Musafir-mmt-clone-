@@ -11,7 +11,6 @@
   /* border: 1px solid green; */
   height: auto;
   padding-top: 100px;
-  
 }
 .flight_container {
   /* border: 10px solid green; */
@@ -66,18 +65,18 @@
   flex-wrap: wrap;
   /* border: 1px solid red; */
 }
-.bookingSearch > div:nth-child(1){
+.bookingSearch > div:nth-child(1) {
   width: 46%;
   /* border: 1px solid red; */
   margin-right: 14px;
 }
-.bookingSearch > div:nth-child(2){
+.bookingSearch > div:nth-child(2) {
   width: 23%;
   /* border: 1px solid green; */
   display: grid;
-    place-items: center;
+  place-items: center;
 }
-.bookingSearch > div:nth-child(3){
+.bookingSearch > div:nth-child(3) {
   width: 23%;
   /* border: 1px solid green; */
 }
@@ -93,7 +92,7 @@
   width: 100%;
   /* border: 1px solid magenta; */
 }
-.to{
+.to {
   width: 100%;
   /* border: 1px solid green; */
 }
@@ -111,15 +110,11 @@
 
 /* //Departire nad return date css starts */
 .DepRetContainer {
-  
-  
   width: 23%;
   height: 55px;
   border-radius: 5px;
-  border:1px solid red;
-  margin-top: 20px;
-
- 
+  border: 1px solid grey;
+  /* margin-top: 20px; */
 }
 
 /* no. of travellers */
@@ -260,12 +255,11 @@
 }
 
 @media only screen and (max-width: 1320px) {
-
   .fromToConnecting {
     margin: auto;
     margin-bottom: 20px;
   }
-  
+
   .travellerContainer {
     width: 30%;
     padding-left: 4px;
@@ -275,20 +269,17 @@
   }
 }
 @media only screen and (max-width: 1020px) {
-  .bookingSearch > div:nth-child(1){
+  .bookingSearch > div:nth-child(1) {
     width: 100%;
-    
   }
-  .bookingSearch > div:nth-child(2){
+  .bookingSearch > div:nth-child(2) {
     width: 47%;
-    
   }
-  .bookingSearch > div:nth-child(3){
+  .bookingSearch > div:nth-child(3) {
     width: 47%;
-    
   }
 
-  .travellerContainer{
+  .travellerContainer {
     flex-grow: 1;
   }
   .buttonContainer {
@@ -299,9 +290,7 @@
 @media only screen and (max-width: 1050px) {
   .fromToConnecting {
     margin-left: 1%;
-   
   }
-  
 
   .buttonContainer {
     bottom: 5.5%;
@@ -309,73 +298,59 @@
   }
 }
 
-
-
-
-
-.container{
+.container {
   width: 100%;
- 
+
   display: flex;
   justify-content: space-between;
-
 }
-.left{
-  width:25%;
+.left {
+  width: 25%;
   height: 700px;
 
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.right{
-  width:73%;
+.right {
+  width: 73%;
 
   display: grid;
-  grid-template-columns: repeat(1,1fr);
-  gap:10px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
 }
-.flightCard{
-  width:100%;
-  height:90px;
-  
+.flightCard {
+  width: 100%;
+  /* height: 90px; */
+
   display: flex;
   justify-content: space-around;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
 }
-.flightName{
-display: flex;
-height: 70px;
-margin-top: 15px;
-
-
-}
-.totalTime{
-
+.flightName {
+  display: flex;
   height: 70px;
   margin-top: 15px;
-
 }
-.flighttime{
-
+.totalTime {
   height: 70px;
   margin-top: 15px;
-
 }
-.price{
-
+.flighttime {
+  height: 70px;
+  margin-top: 15px;
+}
+.price {
   height: 70px;
   margin-top: 25px;
-
 }
-.bookNow{
+.bookNow {
   height: 25px;
   margin-top: 25px;
   background-color: #3339e9;
- 
+
   border: none;
   border-radius: 5%;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .filters {
@@ -389,43 +364,51 @@ margin-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
- 
-
 }
-  h3 {
-    color: #000000;
-    font-size: 17px;
-    line-height: 0px;
-    text-align: left;
+h3 {
+  color: #000000;
+  font-size: 17px;
+  line-height: 0px;
+  text-align: left;
+}
+.divi {
+  padding: 0;
+  align-items: center;
+  color: #000000;
+  display: flex;
+  font-size: 14px;
+}
+p {
+  color: #000000;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  line-height: 21px;
+  font-weight: 500;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+}
+.logo {
+  width: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .left {
+    display: none;
   }
-  .divi {
-    padding: 0;
-    align-items: center;
-    color: #000000;
-    display: flex;
-    font-size: 14px;
-    
+  .right {
+    width: 100%;
   }
-    p {
-      color: #000000;
-      font-size: 14px;
-      padding: 0;
-      margin: 0;
-      line-height: 21px;
-      font-weight: 500;
-      margin-left: 10px;
-      align-items: center;
-    }
-
-
-    .logo img{
-      width:100%;
-
-    }
-    .logo{
- 
-      width:20%;
-    }
-
-
-
+  .flightCard {
+    margin: auto;
+    width: 100%;
+    flex-direction: column;
+  }
+  .logo img {
+    width: 50%;
+  }
+}
