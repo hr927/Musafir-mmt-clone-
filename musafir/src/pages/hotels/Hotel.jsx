@@ -1,6 +1,7 @@
 import {
   Autocomplete,
   FormControl,
+  Grid,
   TextField,
   Typography,
 } from "@mui/material";
@@ -51,15 +52,16 @@ const Hotel = () => {
   return (
     <>
       <Box
-        style={{
+        sx={{
           backgroundColor: "aliceblue",
           width: "100%",
-          height: "70px",
+          // height: "70px",
 
           top: "105px",
           display: "flex",
           position: "fixed",
           padding: "10px",
+          flexDirection: ["column", "column", "row"],
         }}
       >
         <FormControl sx={{ color: "white", fontSize: "10px", padding: "10px" }}>
@@ -67,7 +69,7 @@ const Hotel = () => {
             disablePortal
             id="combo-box-demo"
             options={cities}
-            sx={{ width: 300 }}
+            sx={{ width: [200, 300], margin: "auto" }}
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
@@ -92,13 +94,14 @@ const Hotel = () => {
           gap: "10px",
           margin: "auto",
           marginTop: "200px",
+          paddingTop: ["300px", "300px", "100px"],
         }}
       >
         <Box
           sx={{
             padding: "5px",
             width: "20%",
-            display: "flex",
+            display: ["none", "none", "flex"],
             flexDirection: "column",
             alignContent: "flex-start",
           }}
@@ -870,36 +873,44 @@ const Hotel = () => {
             width: "90%",
           }}
         >
-          {Data.map((e) => (
-            <Citycard
-              key={e.id}
-              price={e.grayText}
-              dscprice={e.discprice}
-              name={e.blueText}
-              image={e.img}
-              imgThumb1={e.imgThumb1}
-              imgThumb2={e.imgThumb2}
-              imgThumb3={e.imgThumb3}
-              imgThumb4={e.imgThumb4}
-              rating={e.rating}
-              ratingText={e.ratingText}
-              location={e.pc__html}
-              location2={e.wordBreak}
-              item={e.persuasion__item}
-              cancellation={e.cancellation}
-              freecancellation={e.freecanc}
-              pernight={e.font10}
-              tax={e.tax}
-              offer={e.offer}
-              ratingcount={e.blackText}
-              text={e.font11}
-              value1={e.value1}
-              value2={e.value2}
-              value3={e.value3}
-              value4={e.value4}
-              value5={e.value5}
-            />
-          ))}
+          <Grid
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
+          >
+            {Data.map((e) => (
+              <Grid item xs={4} sm={4} md={12} key={e.id}>
+                <Citycard
+                  key={e.id}
+                  price={e.grayText}
+                  dscprice={e.discprice}
+                  name={e.blueText}
+                  image={e.img}
+                  imgThumb1={e.imgThumb1}
+                  imgThumb2={e.imgThumb2}
+                  imgThumb3={e.imgThumb3}
+                  imgThumb4={e.imgThumb4}
+                  rating={e.rating}
+                  ratingText={e.ratingText}
+                  location={e.pc__html}
+                  location2={e.wordBreak}
+                  item={e.persuasion__item}
+                  cancellation={e.cancellation}
+                  freecancellation={e.freecanc}
+                  pernight={e.font10}
+                  tax={e.tax}
+                  offer={e.offer}
+                  ratingcount={e.blackText}
+                  text={e.font11}
+                  value1={e.value1}
+                  value2={e.value2}
+                  value3={e.value3}
+                  value4={e.value4}
+                  value5={e.value5}
+                />
+              </Grid>
+            ))}
+          </Grid>
         </Box>
         {/* </Box> */}
       </Box>

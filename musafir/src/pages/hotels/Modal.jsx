@@ -1,5 +1,3 @@
-
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
@@ -7,11 +5,7 @@ import Box from "@mui/material/Box";
 
 import FormControl from "@mui/material/FormControl";
 
-
-
-
 import {
- 
   Button,
   InputLabel,
   MenuItem,
@@ -23,7 +17,6 @@ import {
 import { useState } from "react";
 import { isBefore } from "date-fns";
 import Calendar from "./Calender";
-
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -70,9 +63,7 @@ const style = {
   p: 4,
 };
 
-export default function Header({Filter}) {
-
-  
+export default function Header({ Filter }) {
   const [open, setOpen] = React.useState(false);
   const [family, setFamily] = useState("");
   const [rooms, setRooms] = useState(0);
@@ -80,52 +71,63 @@ export default function Header({Filter}) {
   const [children, setChildren] = useState("");
   const [roomPrice, setRoomPrice] = useState("");
 
-
-
-  
-
-
-
-
   const handleRoomPrice = (event) => {
     setRoomPrice(event.target.value);
   };
 
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-
-
   return (
-    <Box sx={{ margin: "auto",padding: "10px",color: "white" }}>
+    <Box sx={{ margin: "auto", padding: "10px", color: "white" }}>
       <Box>
-
-        <Stack direction="row" spacing={2}>
-        <Calendar />
-           <Box sx={{width:"150px", color: "grey", padding: "10px",fontSize:"16px", borderRadius: "5px",border:"1px solid grey", cursor: "pointer",}} onClick={handleOpen}>
+        <Stack
+          direction={{ sm: "column", lg: "row" }}
+          spacing={{ xs: 2, sm: 2, md: 2 }}
+          padding={{ xs: 2, sm: 2, md: 2 }}
+        >
+          <Calendar />
+          <Box
+            sx={{
+              width: "150px",
+              color: "grey",
+              padding: "10px",
+              fontSize: "16px",
+              borderRadius: "5px",
+              border: "1px solid grey",
+              cursor: "pointer",
+            }}
+            onClick={handleOpen}
+          >
             {family ? family : "Room and Guests"}
           </Box>
 
           <FormControl style={{ width: "25%" }}>
-
             <InputLabel id="demo-simple-select-label">
               Price per Night
             </InputLabel>
 
-            <Select style={{ color: "grey",width:"150px", }}
+            <Select
+              style={{ color: "grey", width: "150px" }}
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={roomPrice}
               label="Price per Night"
-              onChange={handleRoomPrice}>
-
-              <MenuItem onClick={()=>Filter(0,1500)} value={"0-1500"}>0-1500</MenuItem>
-              <MenuItem onClick={()=>Filter(1500,2500)} value={"1500-2500"}>1500-2500</MenuItem>
-              <MenuItem onClick={()=>Filter(2500,5000)} value={"2500-5000"}>2500-5000</MenuItem>
-              <MenuItem onClick={()=>Filter(5000,100000)} value={"5000+"}>5000+</MenuItem>
+              onChange={handleRoomPrice}
+            >
+              <MenuItem onClick={() => Filter(0, 1500)} value={"0-1500"}>
+                0-1500
+              </MenuItem>
+              <MenuItem onClick={() => Filter(1500, 2500)} value={"1500-2500"}>
+                1500-2500
+              </MenuItem>
+              <MenuItem onClick={() => Filter(2500, 5000)} value={"2500-5000"}>
+                2500-5000
+              </MenuItem>
+              <MenuItem onClick={() => Filter(5000, 100000)} value={"5000+"}>
+                5000+
+              </MenuItem>
             </Select>
-
           </FormControl>
 
           <Modal
@@ -175,9 +177,7 @@ export default function Header({Filter}) {
 
           {/* <Button sx={{display: "flex",justifyContent: "center",margin: "auto",alignContent: "center",}} variant="contained">Search</Button> */}
         </Stack>
-
       </Box>
-
     </Box>
   );
 }

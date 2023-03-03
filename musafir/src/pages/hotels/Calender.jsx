@@ -1,50 +1,48 @@
-import * as React from 'react';
-import { Dayjs } from 'dayjs';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import { LocalizationProvider } from '@mui/x-date-pickers-pro';
-import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
-import { DateRangePicker, DateRange } from '@mui/x-date-pickers-pro/DateRangePicker';
-import { Typography } from '@mui/material';
+import * as React from "react";
+import { Dayjs } from "dayjs";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { Typography } from "@mui/material";
 
 export default function Calendar() {
-  const [value, setValue] = React.useState([null,null]);
+  const [value, setValue] = React.useState([null, null]);
+  const [departure, setDeparture] = React.useState("");
+  const [returnDate, setReturnDate] = React.useState("");
 
-  return (<Box style={{color:"white",}}>
-    <LocalizationProvider 
-      dateAdapter={AdapterDayjs}
-      localeText={  { start: 'Check-in', end: 'Check-out' }}
-      >
-      <DateRangePicker
-        value={value}
-        onChange={(newValue) => {
-          setValue(newValue);
-        }}
-        renderInput={(startProps, endProps) => (
-          <React.Fragment >
-            <TextField   InputProps={{
-    style: {
-      color: 'black',
-      borderRadius:"10px",
-      // height:"40px",
-    
-    },
-  }} {...startProps} />
-            <Box sx={{ mx: 2,color:"white" }}> to </Box>
-            <TextField InputProps={{
-    style: {
-      color: 'black',
-      borderRadius:"10px",
-      // height:"40px",
-      // padding:"10px",
-      
-    },
-  }}{...endProps} />
-          </React.Fragment>
-        )}
+  return (
+    <Box
+      sx={{
+        color: "white",
+        display: "flex",
+        flexDirection: ["column", "column", "row"],
+        gap: "2",
+      }}
+    >
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DatePicker
+          label="Check In"
+          value={departure}
+          disablePast="true"
+          onChange={(newValue) => {
+            setDeparture(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} error={false} />}
         />
-    </LocalizationProvider>
-  
-        </Box>
+      </LocalizationProvider>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DatePicker
+          label="Check Out"
+          value={returnDate}
+          disablePast="true"
+          onChange={(newValue) => {
+            setReturnDate(newValue);
+          }}
+          renderInput={(params) => <TextField {...params} error={false} />}
+        />
+      </LocalizationProvider>
+    </Box>
   );
 }
