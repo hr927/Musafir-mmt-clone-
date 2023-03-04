@@ -98,8 +98,8 @@ export const Carousal = () => {
             {slider0.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.first.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -119,8 +119,8 @@ export const Carousal = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.second.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -149,8 +149,8 @@ export const Carousal = () => {
             {slider1.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.first.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -170,8 +170,8 @@ export const Carousal = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.second.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -200,8 +200,8 @@ export const Carousal = () => {
             {slider2.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.first.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -221,8 +221,8 @@ export const Carousal = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.second.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -251,8 +251,8 @@ export const Carousal = () => {
             {slider3.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.first.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -272,8 +272,8 @@ export const Carousal = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.second.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -302,8 +302,8 @@ export const Carousal = () => {
             {slider4.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.first.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -323,8 +323,8 @@ export const Carousal = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.second.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -353,8 +353,8 @@ export const Carousal = () => {
             {slider5.map((item) => {
               return (
                 <div key={item.id}>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.first.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -374,8 +374,8 @@ export const Carousal = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="each-slide">
-                    <div className="ind-slide">
+                  <div key={item.id} className="each-slide">
+                    <div key={item.id} className="ind-slide">
                       <div className="imageSection">
                         <img src={item.second.thumbnail_image} alt="" />
                         <p>T&C's Apply</p>
@@ -405,8 +405,8 @@ export const Carousal = () => {
               {slider6.map((item) => {
                 return (
                   <div key={item.id}>
-                    <div className="each-slide">
-                      <div className="ind-slide">
+                    <div key={item.id} className="each-slide">
+                      <div key={item.id} className="ind-slide">
                         <div className="imageSection">
                           <img src={item.first.thumbnail_image} alt="" />
                           <p>T&C's Apply</p>
@@ -428,8 +428,8 @@ export const Carousal = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="each-slide">
-                      <div className="ind-slide">
+                    <div key={item.id} className="each-slide">
+                      <div key={item.id} className="ind-slide">
                         <div className="imageSection">
                           <img src={item.second.thumbnail_image} alt="" />
                           <p>T&C's Apply</p>

@@ -260,7 +260,7 @@ export default function Header() {
               <DatePicker
                 label="Departure"
                 value={departure}
-                disablePast="true"
+                disablePast={true}
                 onChange={(newValue) => {
                   setDeparture(newValue);
                 }}
@@ -274,7 +274,7 @@ export default function Header() {
                 label="Return"
                 disabled={trip === "One Way"}
                 value={returnDate}
-                disablePast="true"
+                disablePast={true}
                 onChange={(newValue) => {
                   setReturnDate(newValue);
                 }}

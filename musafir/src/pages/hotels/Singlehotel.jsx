@@ -187,7 +187,7 @@ const Singlehotel = () => {
           gap: "50px",
         }}
       >
-        <Box style={{ marginTop: "", width: "60%" }}>
+        <Box sx={{ marginTop: "", width: ["100%", "60%"] }}>
           <div style={{ display: "flex" }}>
             <div>
               <div>
@@ -227,9 +227,9 @@ const Singlehotel = () => {
         <Box
           sx={{
             marginTop: "",
-            width: "40%",
+            width: "auto",
             display: "flex",
-            flexDirection: ["row", "row", "column"],
+            flexDirection: ["column", "row", "column"],
           }}
         >
           <Box style={{ borderRadius: "10px", border: "1px solid grey" }}>
@@ -238,9 +238,10 @@ const Singlehotel = () => {
                 fontFamily: "Lato",
                 fontSize: "26px",
                 fontWeight: 900,
-                lineHeight: "16px",
+                lineHeight: "25px",
                 color: "rgb(0, 0, 0)",
                 padding: "10px",
+                margin: "auto",
                 marginTop: "5px",
               }}
             >
@@ -540,7 +541,7 @@ const Singlehotel = () => {
                   fontFamily: "Lato",
                   fontSize: "22px",
                   fontWeight: "700",
-                  lineHeight: "15px",
+                  lineHeight: "25px",
                   color: " rgb(0, 140, 255)",
                 }}
               >
