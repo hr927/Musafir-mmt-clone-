@@ -103,6 +103,51 @@ const Style = styled.div`
       top: 30px;
     }
   }
+  @media only screen and (max-width: 1024px) {
+    .div1 {
+      margin-left: 0;
+      width: 90%;
+      padding: 5%;
+    }
+    .heading {
+      width: 100%;
+      margin-left: 0;
+    }
+    .adultform {
+      width: 100%;
+      margin-left: 0;
+    }
+    .form {
+      width: 45%;
+      margin-right: 5%;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .div1 {
+      margin-left: 0;
+      width: 90%;
+      padding: 5%;
+    }
+    .heading {
+      width: 100%;
+      margin-left: 0;
+    }
+    .adultform {
+      width: 100%;
+      margin-left: 0;
+    }
+    .form {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .gender {
+      button {
+        width: 45%;
+      }
+    }
+  }
 `;
 
 export default TravellerDetails;

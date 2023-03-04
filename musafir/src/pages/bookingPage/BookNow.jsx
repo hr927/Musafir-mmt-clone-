@@ -15,7 +15,7 @@ const BookNow = () => {
         <FlightDetails />
         <LuggageBar />
         <CancelDetails />
-        <TravellerDetails />
+        {/* <TravellerDetails /> */}
         <BookingDetailsSend />
         <BookNowButton />
         {/* <Flightdetailfooter /> */}
@@ -60,6 +60,25 @@ export const Getdatacss = styled.div`
     // border: 1px solid black;
     margin: 10px 50px 10px 0px;
     padding: 10px;
+  }
+  @media only screen and (max-width: 768px) {
+    .detail {
+      padding-left: 10px;
+      width: 100%;
+    }
+    .pay_detail {
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .main_div {
+      height: 300px;
+    }
+    .detail {
+      padding-left: 5px;
+    }
   }
 `;
 

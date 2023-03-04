@@ -36,14 +36,15 @@ const Bookingheadercss = styled.div`
     background-color: black;
   }
   .bookingheader {
-    // background-color: #041422;
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 30px;
+    padding-top: 150px;
+    z-index: 1;
+    position: relative;
 
     h2 {
       color: white;
@@ -61,6 +62,56 @@ const Bookingheadercss = styled.div`
       font-size: 13px;
       border-bottom: 1px solid white;
       margin-bottom: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .bookingheader {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 150px;
+      padding-bottom: 20px;
+      text-align: center;
+
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    .bookingleft {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* For tablets: */
+    .bookingheader {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 150px;
+      padding-bottom: 20px;
+      text-align: center;
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    .bookingleft {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+
+      p {
+        margin-bottom: 10px;
+      }
     }
   }
 `;

@@ -27,7 +27,7 @@ const Getdatacss = styled.div`
       #051423
     );
     width: 100%;
-    position: absolute;
+    // position: absolute;
     top: 70px;
     left: 0;
     /* height: 250px; */
@@ -48,6 +48,32 @@ const Getdatacss = styled.div`
     // border: 1px solid black;
     margin: 10px 50px 10px 0px;
     padding: 10px;
+  }
+  @media (max-width: 768px) {
+    .detail {
+      padding-left: 10px;
+      width: 60%;
+    }
+    .pay_detail {
+      width: 40%;
+      margin-right: 0px;
+      margin-left: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .final {
+      flex-direction: column;
+    }
+    .detail {
+      padding-left: 10px;
+      width: 100%;
+    }
+    .pay_detail {
+      width: 100%;
+      margin-right: 0px;
+      margin-left: 0px;
+    }
   }
 `;
 
