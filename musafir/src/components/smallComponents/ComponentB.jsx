@@ -33,7 +33,7 @@ const ComponentB = ({ email, password, setpassword, setflip }) => {
         }}
         size="small"
         sx={{ m: 1, mt: 3, width: "90%" }}
-        placeholder="Enter Email"
+        placeholder="Enter Password"
         id="outlined-basic"
         label="Password"
         type="password"
