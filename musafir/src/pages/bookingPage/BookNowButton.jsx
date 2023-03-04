@@ -27,6 +27,22 @@ const Style = styled.div`
     font-weight: 700;
     font-size: 20px;
   }
+
+  @media only screen and (max-width: 768px) {
+    button {
+      width: 200px;
+      height: 30px;
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    button {
+      width: 150px;
+      height: 25px;
+      font-size: 16px;
+    }
+  }
 `;
 
 function TabPanel(props) {

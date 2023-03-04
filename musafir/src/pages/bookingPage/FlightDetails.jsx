@@ -173,6 +173,113 @@ const FlightDetailsCSS = styled.div`
     position: relative;
     top: -65px;
   }
+  @media only screen and (max-width: 767px) {
+    .flightdetail {
+      height: auto;
+      margin: 10px;
+      padding: 5px;
+    }
+
+    .flightdetailheader {
+      top: -15px;
+      flex-direction: column;
+    }
+
+    .date {
+      margin-right: 0;
+      margin-bottom: 5px;
+      top: 0;
+    }
+
+    .fare_rules {
+      left: 0;
+      margin-top: 5px;
+    }
+
+    .cancel_fee {
+      font-size: 11px;
+    }
+
+    .flightdetail_internal {
+      top: -30px;
+      flex-direction: column;
+    }
+
+    .icon_div {
+      gap: 5px;
+      padding-left: 0;
+      padding-right: 0;
+
+      img {
+        width: 20%;
+      }
+    }
+
+    .flight_time {
+      flex-direction: column;
+      gap: 5px;
+      padding: 2% 0;
+    }
+
+    #flight_timer {
+      height: auto;
+      top: -30px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .flightdetail {
+      height: auto;
+      margin: 10px;
+      padding: 5px;
+    }
+
+    .flightdetailheader {
+      top: -15px;
+      flex-direction: column;
+    }
+
+    .date {
+      margin-right: 0;
+      margin-bottom: 5px;
+      top: 0;
+    }
+
+    .fare_rules {
+      left: 0;
+      margin-top: 5px;
+    }
+
+    .cancel_fee {
+      font-size: 11px;
+    }
+
+    .flightdetail_internal {
+      top: -30px;
+      flex-direction: column;
+    }
+
+    .icon_div {
+      gap: 5px;
+      padding-left: 0;
+      padding-right: 0;
+
+      img {
+        width: 20%;
+      }
+    }
+
+    .flight_time {
+      flex-direction: column;
+      gap: 5px;
+      padding: 2% 0;
+    }
+
+    #flight_timer {
+      height: auto;
+      top: -30px;
+    }
+  }
 `;
 
 export default FlightDetails;

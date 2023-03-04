@@ -91,6 +91,7 @@ const PaymentBarCSS = styled.div`
     justify-content: space-between;
     border-bottom: 1px solid grey;
     h3 {
+      font-size: 18px;
       margin-bottom: 7px;
       padding-bottom: 5px;
     }
@@ -143,6 +144,59 @@ const PaymentBarCSS = styled.div`
   }
   .terms_remove {
     color: rgb(0, 140, 255);
+  }
+
+  @media (max-width: 768px) {
+    .inline {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h3 {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+      }
+
+      h5 {
+        margin-top: 10px;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+    }
+
+    .promocode {
+      display: none;
+    }
+
+    .promo_icon {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0px;
+
+      h3 {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+
+      img {
+        margin-bottom: 10px;
+      }
+    }
+
+    .code_input {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    .promo_option {
+      padding: 10px;
+    }
   }
 `;
 

@@ -191,6 +191,54 @@ export const CancelDetailsCSS = styled.div`
     margin: 0px;
     padding: 0px 0px 0px 20px;
   }
+  @media (max-width: 768px) {
+    .cancel {
+      height: auto;
+    }
+    .icon_div {
+      flex-direction: column;
+      align-items: center;
+    }
+    .penalty_rs,
+    .penalty_date {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .cancGradline {
+      margin: 0% 0% 0% 10%;
+    }
+    .cancel_footer {
+      display: none;
+    }
+    .cancel_footer2 {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      top: -40px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .cancel {
+      margin: 10px;
+      padding: 10px;
+    }
+    .icon_div {
+      top: -15px;
+    }
+    .penalty_rs,
+    .penalty_date {
+      top: -25px;
+    }
+    .cancGradline {
+      margin: 0% 0% 0% 5%;
+      top: -25px;
+    }
+    .cancel_footer2 {
+      top: -20px;
+    }
+  }
 `;
 
 export default CancelDetails;
